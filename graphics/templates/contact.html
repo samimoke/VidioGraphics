@@ -148,7 +148,7 @@
                 <div class="col-lg-6 col-md-6">
                     <div class="contact__form">
                         <h3>Get in touch</h3>
-                        <form action="{% url 'contactus' %}">
+                        <form action="{% url 'contactus' %}" method="POST">
                             {% csrf_token %}
                             <input type="text" name='name' placeholder="Name">
                             <input type="text" name='email' placeholder="Email">
