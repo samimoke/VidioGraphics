@@ -13,7 +13,7 @@ class Contactus(models.Model):
         return self.name
 class Blog(models.Model):
     title=models.CharField(max_length=500)
-    image=models.ImageField(upload_to='image',blank=True,null=True)
+    # image=models.ImageField(upload_to='image',blank=True,null=True)
     author=models.ForeignKey(User,on_delete=models.CASCADE)
     created_on=models.DateTimeField(auto_now_add=True)
     body=models.TextField()
