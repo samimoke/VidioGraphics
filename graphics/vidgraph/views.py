@@ -1,6 +1,8 @@
 from django.shortcuts import render,HttpResponse
 from .forms import ContactForm
 from django.core.mail import send_mail
+from .models import Blog
+from django.views.generic import ListView,DetailView
 from graphics.settings import EMAIL_HOST_USER
 from django.contrib.auth import authenticate,login,logout
 
@@ -50,8 +52,29 @@ def contactus(request):
     
 def portfolio(request):
     return render(request, 'portfolio.html')
-def blog(request):
-    return render(request,'blog.html')
+class  Blogs(ListView):
+    model=Blog
+    template_name='blog.html'
+    context_object_name = 'posts' 
+    # p=Paginator(Blog.objects.all(),3)
+    paginate_by = 1
+    def get_queryset(self):
+        # Your queryset logic goes here
+        return Blog.objects.all()
+class PostDetail(DetailView):
+    model = Blog
+    # queryset= Blog.objects.all().order_by('-created_on')[:4]
+    queryset = Blog.objects.order_by('-created_on')
+    
+    # paginator = Paginator(queryset, 3)
+    # page_number = request.GET.get('page')
+    template_name = 'blog-details.html'
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        post = self.get_object()
+        comments = post.comments.all()  # Retrieve comments for the post
+        context['comments'] = comments
+        return context
 def service(request):
     return render(request, 'services.html')
 def blogDetail(request):

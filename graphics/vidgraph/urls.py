@@ -7,9 +7,9 @@ urlpatterns = [
     path('about',views.about, name='about'),
     path('contactus',views.contactus, name='contactus'),
     path('portfolio',views.portfolio, name='portfolio'),
-    path('blog',views.blog, name='blog'),
+    path('blog',views.Blogs.as_view(), name='blog'),
     path('service', views.service, name='service'),
-    path('blog-detail', views.blogDetail, name='blog-detail')
+    path('<int:pk>/', views.PostDetail.as_view(), name='blog-detail')
 
     
 ]
