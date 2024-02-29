@@ -1,7 +1,7 @@
 
 .env
 .Python
-VIDEOGRAPHISC/Venv/
+VIDEOGRAPHISC/venv/
 
 *.sqlite3
 .idea/
