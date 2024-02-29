@@ -5,9 +5,18 @@ from .models import Blog
 from django.views.generic import ListView,DetailView
 from graphics.settings import EMAIL_HOST_USER
 from django.contrib.auth import authenticate,login,logout
+from django.contrib.auth.forms import UserCreationForm
 
 # Create your views here.
+def LoginPage(request):
+    return render(request, 'login.html')
+
+def SignupPage(request):
+    form = UserCreationForm()
+    context = {'form' : form}
+    return render(request, 'signup.html')
 def home(request):
+    context = {}
     return render(request,'index.html')
 def about(request):
     return render(request,'about.html')
