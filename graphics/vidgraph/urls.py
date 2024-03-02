@@ -8,6 +8,7 @@ urlpatterns = [
     path('contactus',views.contactus, name='contactus'),
     path('portfolio',views.portfolio, name='portfolio'),
     path('blog',views.Blogs.as_view(), name='blog'),
+    path('register',views.register, name='register'),
     path('service', views.service, name='service'),
     path('<int:pk>/', views.PostDetail.as_view(), name='blog-detail')
 

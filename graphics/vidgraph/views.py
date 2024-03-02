@@ -18,6 +18,8 @@ def SignupPage(request):
 def home(request):
     context = {}
     return render(request,'index.html')
+def register(request):
+    return render(request,'Sign-in-siginup.html')
 def about(request):
     return render(request,'about.html')
     
