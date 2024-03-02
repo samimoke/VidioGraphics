@@ -63,7 +63,7 @@ body {
     z-index: 5;
 }
 
-form{
+/* form{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -71,7 +71,7 @@ form{
     width: 40%;
     min-width: 238px;
     padding: 0 10px;
-}
+} */
 form.sign-in-form{
     opacity: 1;
     transition: 0.5s ease-in-out;

@@ -7,7 +7,7 @@
     <meta name="keywords" content="Videograph, unica, creative, html" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Videograph</title>
+    <title>School of Omars</title>
 
     <!-- Google Font -->
     <link
@@ -60,6 +60,13 @@
       href="{% static 'css/sign-in-signup.css' %}"
       type="text/css"
     />
+
+    <link
+      rel="stylesheet"
+      href="{% static 'css/signin.css' %}"
+      type="text/css"
+    />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -147,19 +154,155 @@
     </div>
     <!-- Breadcrumb End -->
 
+    {% comment %} background: #f0f0f0;
+        width: 100%;
+        height: 50px;
+        margin: 10px 0;
+        border: 2px solid #df4adf;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        font-size: 12px; {% endcomment %}
+    {% comment %} Inline CSS Styles Begin {% endcomment %}
+    <style>
+    /* Apply rounded corners to input fields */
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+         /* Adjust the value as per your preference */
+        padding: 10px; /* Adjust padding as needed */
+        background: #f0f0f0;
+        width: 300px;
+        height: 50px;
+        margin: 10px 0;
+        border: 2px solid #df4adf;
+        border-radius: 50px;
+    }
+    h2{
+      font-family: 'Poppins' sans-serif;
+      font-size: 35px;
+      margin-bottom: 10px;
+    }
+    form input{
+      align-items: center;
+      justify-content: center;
+    }
+
+
+</style>
+{% comment %} color: #df4edf; {% endcomment %}
+{% comment %} Inline CSS Styles Begin {% endcomment %}
+
     <!-- Login-Sign In Begin -->
 
-    <div class="container">
-      <div class="row"></div>
-    </div>
+    <section class="login-page spads">
+      <div>
+        <div class="row justify-content-center align-items-center inner-row">
+          <div class="col-lg-5 col-md-7">
+            <div class="form-box login-form p-md-5 p-3">
+              <div class="form-title text-center">
+                <h2 class="fw-bold mb-2">Login</h2>
+              </div>
+              <form action="" class="justify-content-center align-items-centerm" >
+                <div class="form-floating mb-2 text-center justify-content-center">
+                  <input
+                    type="email"
+                    class="form-control form-control-sm mx-auto d-block sliding-placeholderm"
+                    placeholder="Email"
+                    id="floatingInput"
+                  />
+                  {% comment %} <label for="floatingInput">Email</label> {% endcomment %}
+                </div>
+                <div class="form-floating mb-2">
+                  <input
+                    type="password"
+                    class="form-control form-control-sm mx-auto d-block sliding-placeholder"
+                    placeholder="Password"
+                    id="floatingPassword"
+                  />
+                  {% comment %} <label for="floatingPassword">Password</label> {% endcomment %}
+                </div>
+                <div class="mt-2 text-center">
+                  <button class="btn primaryBg">Login</button>
+                </div>
+              </form>
+              <div class="mt-3 text-center">
+                <span>Don't have an account?</span>
+                <button class="p-0 border-0 bg-transparent primaryColor signup-show">
+                  Sign up
+                </button>
+              </div>
+            </div>
 
-    <!-- Login-Sign In End -->
+            <div class="form-box registration-form p-md-5 p-3">
+              <div class="form-title text-center">
+                <h2 class="fw-bold mb-2 text-center">Create Account</h2>
+              </div>
+              <form action="" class="justify-content-center">
+                <div class="form-floating mb-2 text-center justify-content-center">
+                  <input
+                    type="text"
+                    class="form-control form-control-sm mx-auto d-block sliding-placeholder"
+                    placeholder="First Name"
+                    id="floatingInput"
+                  />
+                  {% comment %} <label for="floatingInput">First Name</label> {% endcomment %}
+                </div>
+                <div class="form-floating mb-2">
+                  <input
+                    type="text"
+                    class="form-control form-control-sm mx-auto d-block sliding-placeholder"
+                    placeholder="Last Name"
+                    id="floatingInput"
+                  />
+                  {% comment %} <label for="floatingInput">Last Name</label> {% endcomment %}
+                </div>
 
-    <section class="services-page spad">
-      <div class="container">
-        <div class="row"></div>
+                <div class="form-floating mb-2">
+                  <input
+                    type="email"
+                    class="form-control form-control-sm mx-auto d-block sliding-placeholder"
+                    placeholder="Email"
+                    id="floatingInput"
+                  />
+                  {% comment %} <label for="floatingInput">Email</label> {% endcomment %}
+                </div>
+                <div class="form-floating mb-2">
+                  <input
+                    type="password"
+                    class="form-control form-control-sm mx-auto d-block sliding-placeholder"
+                    placeholder="Password"
+                    id="floatingPassword"
+                  />
+                  {% comment %} <label for="floatingPassword">Password</label> {% endcomment %}
+                </div>
+
+                <div class="form-floating mb-2">
+                  <input
+                    type="password"
+                    class="form-control form-control-sm mx-auto d-block sliding-placeholder"
+                    placeholder="Confirm Password"
+                    id="floatingPassword"
+                  />
+                  {% comment %} <label for="floatingPassword">Password</label> {% endcomment %}
+                </div>
+
+                <div class="mt-2 text-center">
+                  <button class="btn primaryBg ">Sign up</button>
+                </div>
+              </form>
+              <div class="mt-3 text-center">
+                <span>Already have an account?</span>
+                <button class="p-0 border-0 bg-transparent primaryColor login-show">
+                  Sign in
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
+    <!-- Login-Sign In End -->
 
     <!-- Footer Section Begin -->
     <footer class="footer">
@@ -244,9 +387,9 @@
                 <script>
                   document.write(new Date().getFullYear());
                 </script>
-                All rights reserved | This template is made with
+                All rights reserved | This Website is made with
                 <i class="fa fa-heart-o" aria-hidden="true"></i> by
-                <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                <a href="https://colorlib.com" target="_blank">Gezagn and Samuel</a>
               </p>
               <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </div>
@@ -266,6 +409,17 @@
     <script src="{% static 'js/owl.carousel.min.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
     <script src="{% static 'js/app.js' %}"></script>
+        <script>
+        $('.signup-show').click(function(){
+          $('.registration-form').show();
+          $('.login-form').hide();
+        });
+
+          $('.login-show').click(function(){
+          $('.login-form').show();
+          $('.registration-form').hide();
+        });
+    </script>
   </body>
 </html>
 

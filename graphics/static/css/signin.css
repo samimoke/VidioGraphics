@@ -1,0 +1,47 @@
+.inner-row {
+    height: 100vh;
+}
+
+.primaryBg {
+    background: rgba(141, 191, 111, 1);
+}
+
+.primaryColor {
+    color: rgba(141, 194, 11, 111, 1);
+}
+
+.login-page {
+    background: #100028;
+    padding-bottom: 150px;
+}
+
+.form-box {
+    background: #fff;
+    box-shadow: 0 0 20px 0 rgba(9, 222, 255, 0.2) 0 5px 5px 0 rgba(24, 160, 223, 0.24);
+    border-radius: 50px;
+}
+
+.registration-form {
+    display: none;
+}
+
+/* .sliding-placeholder {
+    transition: all 0.3s ease;
+}
+
+.sliding-placeholder:focus+.form-label,
+.sliding-placeholder:valid+.form-label {
+    transform: translateY(-125%) scale(0.85);
+    color: #333;
+} */
+
+/* .form-floating {
+    position: relative;
+}
+
+.form-floating input:focus+label,
+.form-floating input:not(:placeholder-shown)+label {
+    transform: translateY(-150%) scale(0.8);
+    transition: all 0.3s ease-in-out;
+    color: #555;
+} */
