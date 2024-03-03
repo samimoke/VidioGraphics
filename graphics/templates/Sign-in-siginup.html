@@ -203,13 +203,15 @@
               <div class="form-title text-center">
                 <h2 class="fw-bold mb-2">Login</h2>
               </div>
-              <form action="" class="justify-content-center align-items-centerm" >
+              <form action="{% url 'login' %}" class="justify-content-center align-items-centerm" method="POST" >
+                 {% csrf_token %}
                 <div class="form-floating mb-2 text-center justify-content-center">
                   <input
                     type="email"
                     class="form-control form-control-sm mx-auto d-block sliding-placeholderm"
                     placeholder="Email"
                     id="floatingInput"
+                    name="email"
                   />
                   {% comment %} <label for="floatingInput">Email</label> {% endcomment %}
                 </div>
@@ -219,6 +221,7 @@
                     class="form-control form-control-sm mx-auto d-block sliding-placeholder"
                     placeholder="Password"
                     id="floatingPassword"
+                    name="password"
                   />
                   {% comment %} <label for="floatingPassword">Password</label> {% endcomment %}
                 </div>
@@ -245,6 +248,7 @@
                     class="form-control form-control-sm mx-auto d-block sliding-placeholder"
                     placeholder="First Name"
                     id="floatingInput"
+                    name="first_name"
                   />
                   {% comment %} <label for="floatingInput">First Name</label> {% endcomment %}
                 </div>
@@ -254,6 +258,7 @@
                     class="form-control form-control-sm mx-auto d-block sliding-placeholder"
                     placeholder="Last Name"
                     id="floatingInput"
+                    name="last_name"
                   />
                   {% comment %} <label for="floatingInput">Last Name</label> {% endcomment %}
                 </div>
@@ -264,6 +269,7 @@
                     class="form-control form-control-sm mx-auto d-block sliding-placeholder"
                     placeholder="Email"
                     id="floatingInput"
+                    name="email"
                   />
                   {% comment %} <label for="floatingInput">Email</label> {% endcomment %}
                 </div>
@@ -273,6 +279,7 @@
                     class="form-control form-control-sm mx-auto d-block sliding-placeholder"
                     placeholder="Password"
                     id="floatingPassword"
+                    name="password1"
                   />
                   {% comment %} <label for="floatingPassword">Password</label> {% endcomment %}
                 </div>
@@ -283,6 +290,7 @@
                     class="form-control form-control-sm mx-auto d-block sliding-placeholder"
                     placeholder="Confirm Password"
                     id="floatingPassword"
+                    name="password2"
                   />
                   {% comment %} <label for="floatingPassword">Password</label> {% endcomment %}
                 </div>
