@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-{% load static%}
-<html lang="zxx">
+{% load static %}
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -59,6 +59,11 @@
                                     </ul>
                                 </li>
                                 <li><a href="{% url 'contactus' %}">Contact</a></li>
+                                {% if request.user.is_authenticated %}
+                                <li><a href="{% url 'logout' %}">Logout</a></li>
+                                {% else %}
+                                <li><a href="{% url 'register' %}">Get Started </a></li>
+                                {% endif %}
                             </ul>
                         </nav>
                         <div class="header__nav__social">
