@@ -85,7 +85,7 @@
                         {% comment %} <h2>WHAT MAKES USERS WANT TO SHARE A VIDEO ON SOCIAL MEDIA?</h2> {% endcomment %}
                         <h2>{{object.title}} </h2>
                         <ul>
-                            <li>by <span>{{object.author}}</span></li>
+                            {% comment %} <li>by <span>{{object.author}}</span></li> {% endcomment %}
                             <li>{{object.created_on}}</li>
                             <li>{{object.comments.count}} Comment</li>
                         </ul>

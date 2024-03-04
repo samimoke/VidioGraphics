@@ -178,7 +178,7 @@ def register(request):
           form = RegistrationForm()
         # return render(request, 'message/Login_and_Register.html', {'form': form})
           messages.error(request,'There is some errors')
-          return render(request,'Sign-in-siginup.html', {'form': form})
+    return render(request,'Sign-in-siginup.html', {'form': form})
 @login_required
 def logout_request(request):
     logout(request)
@@ -195,7 +195,7 @@ def logins(request):
                 user = User.objects.get(email=email)
             except User.DoesNotExist:
                 messages.error(request, "Email does not exist")
-                return render(request, "login.html")
+                return render(request, "Sign-in-siginup.html")
 
             user = authenticate(request, email=email, password=password)
             if user is not None:

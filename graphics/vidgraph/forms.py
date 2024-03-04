@@ -2,7 +2,7 @@ from django import forms
 from django.core.validators import validate_email
 from .models import Contactus
 from django.contrib.auth.forms import AuthenticationForm,UserCreationForm
-from django.contrib.auth.models import User
+from .models import User
 class ContactForm(forms.ModelForm):
     class Meta:
         model=Contactus
@@ -25,9 +25,9 @@ class RegistrationForm(UserCreationForm):
         
         fields = ('first_name','last_name','email', 'password1')
 class UserLoginForm(AuthenticationForm):
-    email=forms.CharField(widget=forms.TextInput(attrs={'class':'form-control',}))
-    # email = forms.CharField(widget=forms.EmailInput(attrs={'class':'form-control',
-    #                                                         'placeholder':'email'}))
+    # email=forms.CharField(widget=forms.TextInput(attrs={'class':'form-control',}))
+    email = forms.CharField(widget=forms.EmailInput(attrs={'class':'form-control',
+                                                            'placeholder':'email'}))
     password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control',
                                                                  'placeholder': 'password',
                                                                  'id': 'login-pwd'}))
