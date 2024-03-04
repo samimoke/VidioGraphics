@@ -50,9 +50,10 @@ class UserManager(BaseUserManager):
 
 class User(AbstractUser):
     username = None  # Remove the username field
-    first_name=None
-    last_name=None
-    name=models.CharField(max_length=150)
+    # first_name=None
+    # last_name=None
+    first_name=models.CharField(max_length=150)
+    last_name=models.CharField(max_length=100)
     email = models.EmailField(unique=True)
     password=models.CharField(max_length=200)
 
