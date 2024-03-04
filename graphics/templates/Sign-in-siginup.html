@@ -241,7 +241,8 @@
               <div class="form-title text-center">
                 <h2 class="fw-bold mb-2 text-center">Create Account</h2>
               </div>
-              <form action="" class="justify-content-center">
+              <form action="{% url 'register' %}" class="justify-content-center" method="POST">
+                {% csrf_token %}
                 <div class="form-floating mb-2 text-center justify-content-center">
                   <input
                     type="text"

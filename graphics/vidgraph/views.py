@@ -143,9 +143,9 @@ def service(request):
 def blogDetail(request):
     return render(request,'blog-details.html')
 def register(request):
-    # if request.user.is_authenticated:
-    #     return redirect('home')
-    # else:
+    if request.user.is_authenticated:
+        return redirect('home')
+    else:
         if request.method == 'POST':
             form = RegistrationForm(request.POST)
             if form.is_valid():

@@ -59,7 +59,11 @@
                                     </ul>
                                 </li>
                                 <li><a href="{% url 'contactus' %}">Contact</a></li>
-                                <li><a href="{% url 'register' %}">Registration</a></li>
+                                {% if request.user.is_authenticated %}
+                                <li><a href="{% url 'logout' %}">Logout</a></li>
+                                {% else %}
+                                <li><a href="{% url 'register' %}">Get Started </a></li>
+                                {% endif %}
                             </ul>
                         </nav>
                         <div class="header__nav__social">

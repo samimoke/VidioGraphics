@@ -11,7 +11,8 @@ urlpatterns = [
     path('register',views.register, name='register'),
     path('service', views.service, name='service'),
     path('<int:pk>/', views.PostDetail.as_view(), name='blog-detail'),
-    path('login',views.logins,name="login")
+    path('login',views.logins,name="login"),
+    path('logout',views.logout_request,name='logout'),
 
     
 ]
