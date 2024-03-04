@@ -13,6 +13,7 @@ from django.shortcuts import redirect
 from django.contrib import messages
 # from django.contrib.auth import authenticate, login,logout
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # Create your views here.
 
@@ -115,15 +116,41 @@ def contactus(request):
     
 def portfolio(request):
     return render(request, 'portfolio.html')
-class  Blogs(ListView):
-    model=Blog
-    template_name='blog.html'
-    context_object_name = 'posts' 
-    # p=Paginator(Blog.objects.all(),3)
+# class  Blogs(ListView):
+#     model=Blog
+#     template_name='blog.html'
+#     context_object_name = 'posts' 
+#     # p=Paginator(Blog.objects.all(),3)
+#     paginate_by = 1
+#     def get_queryset(self):
+#         # Your queryset logic goes here
+#         return Blog.objects.all()
+class Blogs(ListView):
+    model = Blog
+    template_name = 'blog.html'
+    context_object_name = 'posts'
     paginate_by = 1
+
     def get_queryset(self):
         # Your queryset logic goes here
         return Blog.objects.all()
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        blog_list = self.get_queryset()
+        paginator = Paginator(blog_list, self.paginate_by)
+        page = self.request.GET.get('page')
+        try:
+            posts = paginator.page(page)
+        except PageNotAnInteger:
+            # If page is not an integer, deliver first page.
+            posts = paginator.page(1)
+        except EmptyPage:
+            # If page is out of range (e.g. 9999), deliver last page of results.
+            posts = paginator.page(paginator.num_pages)
+
+        context['posts'] = posts
+        return context
 class PostDetail(DetailView):
     model = Blog
     # queryset= Blog.objects.all().order_by('-created_on')[:4]
@@ -211,7 +238,7 @@ def logins(request):
                     return redirect('index')
             else:
                 messages.error(request, "Email or password incorrect")
-                return render(request, "login.html")
+                return render(request, "Sign-in-siginup.html")
         else:
             f = UserLoginForm()
             return render(request=request,
