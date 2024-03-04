@@ -13,6 +13,7 @@ urlpatterns = [
     path('<int:pk>/', views.PostDetail.as_view(), name='blog-detail'),
     path('login',views.logins,name="login"),
     path('logout',views.logout_request,name='logout'),
+    path('paginate/', views.paginate, name='paginate'),
 
     
 ]

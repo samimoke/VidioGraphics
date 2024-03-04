@@ -2,6 +2,8 @@ from django.shortcuts import render,HttpResponse
 from .forms import ContactForm
 from django.core.mail import send_mail
 from .models import Blog
+from django.http import JsonResponse
+
 # from django.contrib.auth.models import Users
 from .models import User
 from django.views.generic import ListView,DetailView
@@ -14,6 +16,8 @@ from django.contrib import messages
 # from django.contrib.auth import authenticate, login,logout
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.template.loader import render_to_string
+
 
 # Create your views here.
 
@@ -151,6 +155,19 @@ class Blogs(ListView):
 
         context['posts'] = posts
         return context
+def paginate(request):
+    page_number = request.GET.get('page')
+    blog_list = Blog.objects.all()
+    paginator = Paginator(blog_list, 6)
+    try:
+        posts = paginator.page(page_number)
+    except PageNotAnInteger:
+        posts = paginator.page(1)
+    except EmptyPage:
+        posts = paginator.page(paginator.num_pages)
+
+    context = {'posts': posts}
+    return JsonResponse({'html': render_to_string('blog.html', context)})
 class PostDetail(DetailView):
     model = Blog
     # queryset= Blog.objects.all().order_by('-created_on')[:4]

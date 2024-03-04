@@ -99,7 +99,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="blog__item">
+                    <div class="blog__item" id ="blog_id">
             
                         {% for post in posts %}
                        <h4> {{post.title}}</h4>
@@ -143,6 +143,25 @@
 
         </div>
     </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    function loadPage(pageNumber) {
+        $.ajax({
+            url: "{% url 'paginate' %}",
+            data: {
+                page: pageNumber
+            },
+            success: function(data) {
+                $('#blog-id').html(data);
+            }
+        });
+    }
+</script>
+<script>
+    $(document).ready(function() {
+        loadPage(1); // Load the first page initially
+    });
+</script>
     <!-- Blog Section End -->
 
     <!-- Footer Section Begin -->
