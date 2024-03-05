@@ -1,4 +1,4 @@
-from django.shortcuts import render,HttpResponse
+from django.shortcuts import render,HttpResponse, get_object_or_404
 from .forms import ContactForm
 from django.core.mail import send_mail
 from .models import Blog
@@ -10,7 +10,7 @@ from django.views.generic import ListView,DetailView
 from graphics.settings import EMAIL_HOST_USER
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.forms import UserCreationForm
-from .forms import RegistrationForm,  UserLoginForm
+from .forms import RegistrationForm,  UserLoginForm, CommentForm
 from django.shortcuts import redirect
 from django.contrib import messages
 # from django.contrib.auth import authenticate, login,logout
@@ -176,11 +176,15 @@ class PostDetail(DetailView):
     # paginator = Paginator(queryset, 3)
     # page_number = request.GET.get('page')
     template_name = 'blog-details.html'
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     post = self.get_object()
+    #     comments = post.comments.all()  # Retrieve comments for the post
+    #     context['comments'] = comments
+    #     return context
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        post = self.get_object()
-        comments = post.comments.all()  # Retrieve comments for the post
-        context['comments'] = comments
+        context['post'] = self.object  # Add the 'post' object to the context
         return context
 def service(request):
     return render(request, 'services.html')
@@ -268,3 +272,19 @@ def is_valid_form(values):
         if field=='':
             valid=False
         return valid
+def add_comment_to_post(request, pk):
+    post = get_object_or_404(Blog, pk=pk)
+    if request.method == "POST":
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.post = post
+            comment.save()
+            
+        return redirect('blog-detail', pk=post.pk)
+        
+        # return render(request, 'Post_detail.html', {'comment':comment})
+     
+    else:
+        form = CommentForm()
+    return render(request, 'blog-details.html', {'form': form})

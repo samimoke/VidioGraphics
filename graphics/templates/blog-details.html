@@ -186,13 +186,14 @@
                         </div>
                         <div class="blog__details__comment">
                             <h4>Leave a comment</h4>
-                            <form action="#">
+                            <form action="{% url 'add_comment' pk=post.pk %}" method="POST">
+                                {% csrf_token %}
                                 <div class="input__list">
-                                    <input type="text" placeholder="Name">
-                                    <input type="text" placeholder="Email">
-                                    <input type="text" placeholder="Website">
+                                    <input type="text" name="first_name" value="{{request.user.first_name}}" placeholder="Name">
+                                    <input type="text" name="email" value="{{request.user.email}}"placeholder="Email">
+                                    {% comment %} <input type="text" placeholder="Website"> {% endcomment %}
                                 </div>
-                                <textarea placeholder="Comment"></textarea>
+                                <textarea name="body" placeholder="Comment"></textarea>
                                 <button type="submit" class="site-btn">Send Message</button>
                             </form>
                         </div>
