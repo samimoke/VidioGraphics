@@ -90,7 +90,7 @@
                         {% comment %} <h2>WHAT MAKES USERS WANT TO SHARE A VIDEO ON SOCIAL MEDIA?</h2> {% endcomment %}
                         <h2>{{object.title}} </h2>
                         <ul>
-                            {% comment %} <li>by <span>{{object.author}}</span></li> {% endcomment %}
+                            <li>by <span>{{object.author}}</span></li>
                             <li>{{object.created_on}}</li>
                             <li>{{object.comments.count}} Comment</li>
                         </ul>
@@ -108,14 +108,7 @@
                 <div class="col-lg-8">
                     <div class="blog__details__content">
                         <div class="blog__details__text">
-                            {% comment %} <p>Videos with a wow factor are always more shareable than those without it. The wow factor
-                                is hard to define, but it generally refers to any content that makes viewers think,
-                                “Wow!” For example, consider those viral videos of athletes making insanely difficult
-                                basketball trick shots, such as shooting a basket while doing a backwards flip on a
-                                trampoline.</p>
-                            <p>That’s the kind of catchy content that makes people want to share it with their friends.
-                                With a little clever marketing, you can put that wow factor to work for your business’
-                                videos.</p> {% endcomment %}
+                            
                                 <p>{{object.body}}</p>
                         </div>
                         <div class="blog__details__quote">

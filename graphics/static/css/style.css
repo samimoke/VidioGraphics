@@ -789,6 +789,7 @@ ol {
 
 .blog__item.latest__item {
   margin-bottom: 0;
+  display:inline-block;
 }
 .blog__item.latest__item:hover {
   border: 1px solid #222222 !important;

@@ -158,7 +158,7 @@ class Blogs(ListView):
 def paginate(request):
     page_number = request.GET.get('page')
     blog_list = Blog.objects.all()
-    paginator = Paginator(blog_list, 6)
+    paginator = Paginator(blog_list, 3)
     try:
         posts = paginator.page(page_number)
     except PageNotAnInteger:
