@@ -108,14 +108,15 @@
                       <li><a href="{% url 'blog' %}">Blog</a></li>
                       {% for post in posts %}
                       <li>
-                        <a href="{% url 'blog-detail' post.id %}"
-                          >Blog Details</a
-                        >
+                        <a href="{% url 'blog-detail' post.id %}">Blog Details</a>
                       </li>
                       {% endfor %}
                     </ul>
                   </li>
                   <li><a href="{% url 'contactus' %}">Contact</a></li>
+                  {% if request.user.is_authenticated %}
+                  <li><a href="{% url 'login' %}">Login</a></li>
+                  {% endif %}
                 </ul>
               </nav>
               <div class="header__nav__social">
