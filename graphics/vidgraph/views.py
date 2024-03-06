@@ -10,7 +10,7 @@ from django.views.generic import ListView,DetailView
 from graphics.settings import EMAIL_HOST_USER
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.forms import UserCreationForm
-from .forms import RegistrationForm,  UserLoginForm, CommentForm
+from .forms import RegistrationForm,  UserLoginForm, CommentForm, SubscriptionForm
 from django.shortcuts import redirect
 from django.contrib import messages
 # from django.contrib.auth import authenticate, login,logout
@@ -287,4 +287,14 @@ def add_comment_to_post(request, pk):
      
     else:
         form = CommentForm()
+    return render(request, 'blog-details.html', {'form': form})
+def subscribe(request):
+    if request.method == 'POST':
+        form = SubscriptionForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request,'Thank you, you are successfully subscribed')
+            return redirect('home')
+    else:
+        form = SubscriptionForm()
     return render(request, 'blog-details.html', {'form': form})

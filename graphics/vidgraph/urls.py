@@ -14,7 +14,8 @@ urlpatterns = [
     path('login',views.logins,name="login"),
     path('logout',views.logout_request,name='logout'),
     path('paginate/', views.paginate, name='paginate'),
-     path('<int:pk>/add_comment/', views.add_comment_to_post, name='add_comment'),
+    path('<int:pk>/add_comment/', views.add_comment_to_post, name='add_comment'),
+    path('subscribe/', views.subscribe, name='subscribe'),
 
     
 ]
