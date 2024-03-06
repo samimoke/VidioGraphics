@@ -5,6 +5,7 @@ from django.shortcuts import reverse
 # from django.contrib.auth.models import User
 from django.conf import settings
 from django.contrib.auth.models import AbstractUser, BaseUserManager
+import uuid
 class Contactus(models.Model):
     name=models.CharField(max_length=100)
     email=models.EmailField(max_length=100,null=True)
@@ -15,18 +16,18 @@ class Contactus(models.Model):
 
 class Comment(models.Model):
     post=models.ForeignKey("Blog", on_delete=models.CASCADE, related_name="comments")
-    name=models.CharField(max_length=100)
+    first_name=models.CharField(max_length=100)
     body=models.TextField()
     added_date=models.DateTimeField(auto_now=True)
     
     def __str__(self):
-        return '%s -%s' % (self.post.title,self.name)
+        return '%s -%s' % (self.post.title,self.first_name)
     
     def TotalComment(self):
         return self.comments.count()
 
     def comments(self):
-        return reverse("blog-single",kwargs={"slug":self.id}) 
+        return reverse("blog-detail",kwargs={"id":self.pk}) 
 class UserManager(BaseUserManager):
     def create_user(self, email, password=None, **extra_fields):
         if not email:

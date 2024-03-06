@@ -92,18 +92,17 @@
                       <li><a href="{% url 'blog' %}">Blog</a></li>
                       {% for post in posts %}
                       <li>
-                        <a href="{% url 'blog-detail' post.id %}"
-                          >Blog Details</a>
+                        <a href="{% url 'blog-detail' post.id %}">Blog Details</a>
                       </li>
                       {% endfor %}
                     </ul>
                   </li>
                   <li><a href="{% url 'contactus' %}">Contact</a></li>
                   {% if request.user.is_authenticated %}
-                                <li><a href="{% url 'logout' %}">Logout</a></li>
-                                {% else %}
-                                <li><a href="{% url 'register' %}">Login</a></li>
-                                {% endif %}
+                  <li><a href="{% url 'logout' %}">Logout</a></li>
+                  {% else %}
+                  <li><a href="{% url 'register' %}">Login</a></li>
+                  {% endif %}
                 </ul>
               </nav>
               <div class="header__nav__social">
@@ -132,7 +131,7 @@
             <div class="breadcrumb__text">
               <h2>Our Sevices</h2>
               <div class="breadcrumb__links">
-                <a href="#">Home</a>
+                <a href="{% url 'home' %}">Home</a>
                 <span>Services</span>
               </div>
             </div>

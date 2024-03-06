@@ -1,6 +1,6 @@
 from django import forms
 from django.core.validators import validate_email
-from .models import Contactus
+from .models import Contactus, Comment
 from django.contrib.auth.forms import AuthenticationForm,UserCreationForm
 from .models import User
 class ContactForm(forms.ModelForm):
@@ -31,3 +31,11 @@ class UserLoginForm(AuthenticationForm):
     password = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control',
                                                                  'placeholder': 'password',
                                                                  'id': 'login-pwd'}))
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model=Comment
+        fields=('first_name', 'body')
+        widgets={
+            'first_name':forms.TextInput(attrs={'class':'form-control'}),
+            'body':forms.Textarea(attrs={'class':'form-control'}),
+        }
