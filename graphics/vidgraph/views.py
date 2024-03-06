@@ -3,8 +3,6 @@ from .forms import ContactForm
 from django.core.mail import send_mail
 from .models import Blog
 from django.http import JsonResponse
-
-# from django.contrib.auth.models import Users
 from .models import User
 from django.views.generic import ListView,DetailView
 from graphics.settings import EMAIL_HOST_USER

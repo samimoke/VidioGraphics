@@ -22,4 +22,5 @@ admin.site.login = logins
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('vidgraph.urls')),
+    
 ]

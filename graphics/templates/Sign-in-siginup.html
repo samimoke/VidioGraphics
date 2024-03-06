@@ -377,8 +377,9 @@
                   Videoprah is an award-winning, full-service production company
                   specializing.
                 </p>
-                <form action="#">
-                  <input type="text" placeholder="Email" />
+                <form action="{% url 'subscribe' %}" method="POST">
+                  {% csrf_token %}
+                  <input type="text" name="email" placeholder="Email" />
                   <button title="submit" type="submit">
                     <i class="fa fa-send"></i>
                   </button>
