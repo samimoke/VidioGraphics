@@ -252,9 +252,9 @@ def logins(request):
                     messages.success(request, 'Authentication is successful')
                     return redirect('/admin')
                 elif user.is_authenticated:
-                    return redirect('index')
+                    return redirect('home')
                 else:
-                    return redirect('index')
+                    return redirect('home')
             else:
                 messages.error(request, "Email or password incorrect")
                 return render(request, "Sign-in-siginup.html")
