@@ -273,7 +273,7 @@
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="counter__item">
                             <div class="counter__item__text">
-                                <img src="img/icons/ci-1.png" alt="">
+                                <img src="{% static 'img/icons/ci-1.png' %}" alt="">
                                 <h2 class="counter_num">230</h2>
                                 <p>Compled Projects</p>
                             </div>
@@ -291,7 +291,7 @@
                     <div class="col-lg-3 col-md-6 col-sm-6">
                         <div class="counter__item third__item">
                             <div class="counter__item__text">
-                                <img src="img/icons/ci-3.png" alt="">
+                                <img src="{% static 'img/icons/ci-3.png' %}" alt="">
                                 <h2 class="counter_num">230</h2>
                                 <p>Perspective clients</p>
                             </div>
@@ -397,7 +397,7 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <div class="footer__top__logo">
-                            <a href="#"><img src="{% static 'img/logo.png' %}" alt=""></a>
+                            <a href="{% url 'home' %}"><img src="{% static 'img/logo.png' %}" alt=""></a>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
@@ -418,7 +418,7 @@
                             <h5>About us</h5>
                             <p>Formed in 2006 by Matt Hobbs and Cael Jones, Videoprah is an award-winning, full-service
                                 production company specializing.</p>
-                            <a href="#" class="read__more">Read more <span class="arrow_right"></span></a>
+                            <a href="{% url 'about' %}" class="read__more">Read more <span class="arrow_right"></span></a>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-3 col-sm-3">
@@ -447,8 +447,9 @@
                         <div class="footer__option__item">
                             <h5>Newsletter</h5>
                             <p>Videoprah is an award-winning, full-service production company specializing.</p>
-                            <form action="#">
-                                <input type="text" placeholder="Email">
+                            <form action="{% url 'subscribe' %}" method="POST">
+                                {% csrf_token %}
+                                <input type="text" name="email" placeholder="Email">
                                 <button type="submit"><i class="fa fa-send"></i></button>
                             </form>
                         </div>

@@ -3,14 +3,12 @@ from .forms import ContactForm
 from django.core.mail import send_mail
 from .models import Blog
 from django.http import JsonResponse
-
-# from django.contrib.auth.models import Users
 from .models import User
 from django.views.generic import ListView,DetailView
 from graphics.settings import EMAIL_HOST_USER
 from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.forms import UserCreationForm
-from .forms import RegistrationForm,  UserLoginForm, CommentForm
+from .forms import RegistrationForm,  UserLoginForm, CommentForm, SubscriptionForm
 from django.shortcuts import redirect
 from django.contrib import messages
 # from django.contrib.auth import authenticate, login,logout
@@ -254,9 +252,9 @@ def logins(request):
                     messages.success(request, 'Authentication is successful')
                     return redirect('/admin')
                 elif user.is_authenticated:
-                    return redirect('index')
+                    return redirect('home')
                 else:
-                    return redirect('index')
+                    return redirect('home')
             else:
                 messages.error(request, "Email or password incorrect")
                 return render(request, "Sign-in-siginup.html")
@@ -287,4 +285,14 @@ def add_comment_to_post(request, pk):
      
     else:
         form = CommentForm()
+    return render(request, 'blog-details.html', {'form': form})
+def subscribe(request):
+    if request.method == 'POST':
+        form = SubscriptionForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request,'Thank you, you are successfully subscribed')
+            return redirect('home')
+    else:
+        form = SubscriptionForm()
     return render(request, 'blog-details.html', {'form': form})

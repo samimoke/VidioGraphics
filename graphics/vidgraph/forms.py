@@ -1,6 +1,6 @@
 from django import forms
 from django.core.validators import validate_email
-from .models import Contactus, Comment
+from .models import Contactus, Comment, Subscription
 from django.contrib.auth.forms import AuthenticationForm,UserCreationForm
 from .models import User
 class ContactForm(forms.ModelForm):
@@ -39,3 +39,7 @@ class CommentForm(forms.ModelForm):
             'first_name':forms.TextInput(attrs={'class':'form-control'}),
             'body':forms.Textarea(attrs={'class':'form-control'}),
         }
+class SubscriptionForm(forms.ModelForm):
+    class Meta:
+        model = Subscription
+        fields = ['email']

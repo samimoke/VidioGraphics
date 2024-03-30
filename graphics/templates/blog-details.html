@@ -80,7 +80,20 @@
         </div>
     </header>
     <!-- Header End -->
-
+   <div class="col-xl-7 col-lg-7 col-md-6">
+                      <div>
+                    {% if messages %}
+                    {% for message in messages %}
+                <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+                  <strong> {{ message }} </strong>
+                   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                   <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                {% endfor %}
+                {% endif %}
+            </div>
+        </div>
     <!-- Blog Details Hero Begin -->
     <section class="blog-hero spad set-bg" data-setbg="{% static 'img/blog/blog-hero.jpg' %}">
         <div class="container">
@@ -91,7 +104,7 @@
                         <h2>{{object.title}} </h2>
                         <ul>
                             <li>by <span>{{object.author}}</span></li>
-                            <li>{{object.created_on}}</li>
+                            <li>{{object.created_on|timesince}} ago</li>
                             <li>{{object.comments.count}} Comment</li>
                         </ul>
                     </div>
@@ -111,19 +124,29 @@
                             
                                 <p>{{object.body}}</p>
                         </div>
-                        <div class="blog__details__quote">
-                            <p>Create horizontal, square and vertical videos that are ready to be exported to your
+                        <div class="blog__details__quotem">
+                            <p>Comments </p>
+                               {% for comment in post.comments.all %}
+                                {% comment %} {% if comment.is_parent %} {% endcomment %}
+                                    {% comment %} <strong> {% endcomment %}
+                                {% comment %} {{request.user.Profile.image}} {% endcomment %}
+                                <p>{{comment.first_name}}-{{comment.added_date|timesince}} ago </p>
+                            {% comment %} </strong> {% endcomment %}
+                                {% comment %} <br/></h5> {% endcomment %}
+                                <p> {{comment.body}}</p>
+                             {% endfor %}
+                            {% comment %} <p>Create horizontal, square and vertical videos that are ready to be exported to your
                                 Instagram video stories and posts. Perfect for any social network!</p>
                             <h6>Max Desmarais</h6>
-                            <i class="fa fa-quote-right"></i>
+                            <i class="fa fa-quote-right"></i> {% endcomment %}
                         </div>
-                        <div class="blog__details__desc">
+                        {% comment %} <div class="blog__details__desc">
                             <p>An average Internet user watches about 1.5 hours of online video every day. This means
                                 that video can be a powerful marketing tool for getting your message before the eyes of
                                 millions of people. However, not all videos are created equal.</p>
                             <p>Some of them are inherently more shareable on social media than others. Here’s a quick
                                 look at how to make users want to share your videos on social media.</p>
-                        </div>
+                        </div> {% endcomment %}
                         <div class="blog__details__tags">
                             <span><i class="fa fa-tag"></i> Tag:</span>
                             <a href="#">Wedding</a>
@@ -211,7 +234,7 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <div class="footer__top__logo">
-                            <a href="#"><img src="{% static 'img/logo.png' %}" alt=""></a>
+                            <a href="{% url 'home' %}"><img src="{% static 'img/logo.png' %}" alt=""></a>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
@@ -232,7 +255,7 @@
                             <h5>About us</h5>
                             <p>Formed in 2006 by Matt Hobbs and Cael Jones, Videoprah is an award-winning, full-service
                                 production company specializing.</p>
-                            <a href="#" class="read__more">Read more <span class="arrow_right"></span></a>
+                            <a href="{% url 'about' %}" class="read__more">Read more <span class="arrow_right"></span></a>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-3 col-sm-3">
@@ -261,8 +284,9 @@
                         <div class="footer__option__item">
                             <h5>Newsletter</h5>
                             <p>Videoprah is an award-winning, full-service production company specializing.</p>
-                            <form action="#">
-                                <input type="text" placeholder="Email">
+                            <form action="{% url 'subscribe' %}" method="POST">
+                                {% csrf_token %}
+                                <input type="text" name="email" placeholder="Email">
                                 <button type="submit"><i class="fa fa-send"></i></button>
                             </form>
                         </div>
