@@ -4,11 +4,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Omars School">
+    <meta name="description" content="Videograph Template">
     <meta name="keywords" content="Videograph, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>School of Omars</title>
+    <title>Omars School</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
@@ -27,9 +27,9 @@
 
 <body>
     <!-- Page Preloder -->
-    {% comment %} <div id="preloder">
+    <div id="preloder">
         <div class="loader"></div>
-    </div> {% endcomment %}
+    </div>
 
     <!-- Header Section Begin -->
     <header class="header">
@@ -48,7 +48,7 @@
                                 <li><a href="{% url 'about' %}">About</a></li>
                                 <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
                                 <li><a href="{% url 'service' %}">Services</a></li>
-                                <li><a href="#">Pages</a>
+                                <li><a href="#" >Pages</a>
                                     <ul class="dropdown">
                                         <li><a href="{% url 'about' %}">About</a></li>
                                         <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
@@ -58,11 +58,11 @@
                                         {% endfor %}
                                     </ul>
                                 </li>
-                                <li><a href="{% url 'contactus' %}">Contact</a></li>
+                               <li><a href="{% url 'contactus' %}">Contact</a></li>
                                 {% if request.user.is_authenticated %}
                                 <li><a href="{% url 'logout' %}">Logout</a></li>
                                 {% else %}
-                                <li><a href="{% url 'register' %}">Login </a></li>
+                                <li><a href="{% url 'register' %}">Login</a></li>
                                 {% endif %}
                             </ul>
                         </nav>
@@ -84,20 +84,69 @@
     <!-- Hero Section Begin -->
     <section class="hero">
         <div class="hero__slider owl-carousel">
-            <div class="hero__item set-bg" data-setbg="{% static 'img/hero/hero-1.jpg' %}">
+            <div class="hero__item set-bg11" >
+             <style>
+                        .set-bg11{
+                            background: url({% static 'img/hero/hero-1.jpg' %})
+                            
+
+                        }
+                    </style>
+                    {% comment %} data-setbg="{% static 'img/hero/hero-1.jpg' %}"> {% endcomment %}
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="hero__text">
                                 <span>For website and video editing</span>
-                                <h2>Omars Videographer’s</h2>
+                                <h2>Videographer’s Portfolio</h2>
                                 <a href="{% url 'about' %}" class="primary-btn">See more about us</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-           
+            <div class="hero__item set-bg12" >
+                  <style>
+                        .set-bg12{
+                            background: url({% static 'img/hero/hero-1.jpg' %})
+                            
+
+                        }
+                    </style>
+                {% comment %} data-setbg="{% static 'img/hero/hero-1.jpg' %}"> {% endcomment %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="hero__text">
+                                <span>For Photo and video editing</span>
+                                <h2>Omar’s Portfolio</h2>
+                                <a href="{% url 'about' %}" class="primary-btn">See more about us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        <div class="hero__item set-bg9" >
+              <style>
+                        .set-bg9{
+                            background: url({% static 'img/hero/hero-1.jpg' %})
+                            
+
+                        }
+                    </style>
+        {% comment %} data-setbg="{% static 'img/hero/hero-1.jpg' %}"> {% endcomment %}
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="hero__text">
+                                <span>For Photo and video editing</span>
+                                <h2>Videographer’s Portfolio</h2>
+                                <a href="#" class="primary-btn">See more about us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
         </div>
     </section>
     <!-- Hero Section End -->
@@ -170,7 +219,15 @@
     <section class="work">
         <div class="work__gallery">
             <div class="grid-sizer"></div>
-            <div class="work__item wide__item set-bg" data-setbg="{% static 'img/work/work-1.jpg' %}">
+            <div class="work__item wide__item set-bg2">
+                <style> 
+             .set-bg2{
+                            background: url({% static 'img/work/work-1.jpg' %})
+                            
+
+                        }
+                    </style>
+            {% comment %} data-setbg="{% static 'img/work/work-1.jpg' %}"> {% endcomment %}
                 <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i
                         class="fa fa-play"></i></a>
                 <div class="work__item__hover">
@@ -181,15 +238,53 @@
                     </ul>
                 </div>
             </div>
-            <div class="work__item small__item set-bg" data-setbg="{% static 'img/work/work-2.jpg' %}">
+            <div class="work__item small__item set-bg3">
+                <style>
+            .set-bg3{
+                            background: url({% static 'img/work/work-2.jpg' %})
+                            
+
+                        }
+                    </style>
+                     {% comment %} data-setbg="{% static 'img/work/work-2.jpg' %}"> {% endcomment %}
                 <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i
                         class="fa fa-play"></i></a>
+                        <div class="work__item__hover">
+                    <h4>VIP Auto Tires & Service</h4>
+                    <ul>
+                        <li>eCommerce</li>
+                        <li>Magento</li>
+                    </ul>
+                </div>
             </div>
-            <div class="work__item small__item set-bg" data-setbg="{% static 'img/work/work-3.jpg' %}">
+            <div class="work__item small__item set-bg4">
+                <style>
+            .set-bg4{
+                            background: url({% static 'img/work/work-3.jpg' %})
+                            
+
+                        }
+                    </style> 
+                    {% comment %} data-setbg="{% static 'img/work/work-3.jpg' %}"> {% endcomment %}
                 <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i
                         class="fa fa-play"></i></a>
+                        <div class="work__item__hover">
+                    <h4>VIP Auto Tires & Service</h4>
+                    <ul>
+                        <li>eCommerce</li>
+                        <li>Magento</li>
+                    </ul>
+                </div>
             </div>
-            <div class="work__item large__item set-bg" data-setbg="{% static 'img/work/work-4.jpg' %}">
+            <div class="work__item large__item set-bg5">
+                <style>
+            .set-bg5{
+                            background: url({% static 'img/work/work-4.jpg' %})
+                            
+
+                        }
+                    </style>
+                     {% comment %} data-setbg="{% static 'img/work/work-4.jpg' %}"> {% endcomment %}
                 <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i
                         class="fa fa-play"></i></a>
                 <div class="work__item__hover">
@@ -200,15 +295,53 @@
                     </ul>
                 </div>
             </div>
-            <div class="work__item small__item set-bg" data-setbg="{% static 'img/work/work-5.jpg' %}">
+            <div class="work__item small__item  set-bg6">
+                <style>
+            .set-bg6{
+                            background: url({% static 'img/work/work-5.jpg' %})
+                            
+
+                        }
+                    </style> 
+                    {% comment %} data-setbg="img/work/work-5.jpg"> {% endcomment %}
                 <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i
                         class="fa fa-play"></i></a>
+                        <div class="work__item__hover">
+                    <h4>VIP Auto Tires & Service</h4>
+                    <ul>
+                        <li>eCommerce</li>
+                        <li>Magento</li>
+                    </ul>
+                </div>
             </div>
-            <div class="work__item small__item set-bg" data-setbg="{% static 'img/work/work-6.jpg' %}">
+            <div class="work__item small__item set-bg7"> 
+                <style>
+            .set-bg7{
+                            background: url({% static 'img/work/work-6.jpg' %})
+                            
+
+                        }
+                    </style>
+                    {% comment %} data-setbg="{% static 'img/work/work-6.jpg' %}"> {% endcomment %}
                 <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i
                         class="fa fa-play"></i></a>
+                        <div class="work__item__hover">
+                    <h4>VIP Auto Tires & Service</h4>
+                    <ul>
+                        <li>eCommerce</li>
+                        <li>Magento</li>
+                    </ul>
+                </div>
             </div>
-            <div class="work__item wide__item set-bg" data-setbg="{% static 'img/work/work-7.jpg' %}">
+            <div class="work__item wide__item set-bg8">
+                    <style>
+            .set-bg8{
+                            background: url({% static 'img/work/work-7.jpg' %})
+                            
+
+                        }
+                    </style>
+                     {% comment %} data-setbg="img/work/work-7.jpg"> {% endcomment %}
                 <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i
                         class="fa fa-play"></i></a>
                 <div class="work__item__hover">
@@ -271,7 +404,14 @@
     <!-- Counter Section End -->
 
     <!-- Team Section Begin -->
-    <section class="team spad set-bg" data-setbg="{% static 'img/team-bg.jpg' %}">
+    <section class="team spad set-bg100" >
+     <style>
+                        .set-bg100{
+                            background: url({% static 'img/team-bg.jpg' %})
+
+                        }
+                    </style> 
+    {% comment %} data-setbg="{% static 'img/team-bg.jpg' %}"> {% endcomment %}
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -283,7 +423,14 @@
             </div>
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6 p-0">
-                    <div class="team__item set-bg" data-setbg="{% static 'img/team/team-1.jpg' %}">
+                    <div class="team__item set-bg14">
+                    <style>
+                        .set-bg14{
+                            background: url({% static 'img/team/team-1.jpg' %})
+
+                        }
+                    </style> 
+                        {% comment %} data-setbg="{% static 'img/team/team-1.jpg' %}"> {% endcomment %}
                         <div class="team__item__text">
                             <h4>AMANDA STONE</h4>
                             <p>Videographer</p>
@@ -297,7 +444,14 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 p-0">
-                    <div class="team__item team__item--second set-bg" data-setbg="{% static 'img/team/team-2.jpg' %}">
+                    <div class="team__item team__item--second set-bg15">
+                        <style>
+                        .set-bg15{
+                            background: url({% static 'img/team/team-2.jpg' %})
+
+                        }
+                    </style> 
+                     {% comment %} data-setbg="{% static 'img/team/team-2.jpg' %}"> {% endcomment %}
                         <div class="team__item__text">
                             <h4>AMANDA STONE</h4>
                             <p>Videographer</p>
@@ -311,7 +465,14 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 p-0">
-                    <div class="team__item team__item--third set-bg" data-setbg="{% static 'img/team/team-3.jpg' %}">
+                    <div class="team__item team__item--third set-bg16">
+                        <style>
+                        .set-bg16{
+                            background: url({% static 'img/team/team-3.jpg' %})
+
+                        }
+                    </style> 
+                     {% comment %} data-setbg="{% static 'img/team/team-3.jpg' %}"> {% endcomment %}
                         <div class="team__item__text">
                             <h4>AMANDA STONE</h4>
                             <p>Videographer</p>
@@ -325,7 +486,14 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 p-0">
-                    <div class="team__item team__item--four set-bg" data-setbg="{% static 'img/team/team-4.jpg' %}">
+                    <div class="team__item team__item--four set-bg17">
+                    <style>
+                        .set-bg17{
+                            background: url({% static 'img/team/team-4.jpg' %})
+
+                        }
+                    </style> 
+                    {% comment %} data-setbg="{% static 'img/team/team-4.jpg' %}"> {% endcomment %}
                         <div class="team__item__text">
                             <h4>AMANDA STONE</h4>
                             <p>Videographer</p>
@@ -452,7 +620,14 @@
     <!-- Latest Blog Section End -->
 
     <!-- Call To Action Section Begin -->
-    <section class="callto spad set-bg" data-setbg="{% static 'img/callto-bg.jpg' %}">
+    <section class="callto spad set-bg20">
+         <style>
+                        .set-bg20{
+                            background: url({% static 'img/callto-bg.jpg' %})
+
+                        }
+                    </style>  
+    {% comment %} data-setbg="{% static 'img/callto-bg.jpg' %}"> {% endcomment %}
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
@@ -474,7 +649,7 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <div class="footer__top__logo">
-                            <a href="{% url 'home' %}"><img src="{% static 'img/logo.png' %}" alt=""></a>
+                            <a href="#"><img src="{% static 'img/logo.png' %}" alt=""></a>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
@@ -495,7 +670,7 @@
                             <h5>About us</h5>
                             <p>Formed in 2006 by Matt Hobbs and Cael Jones, Videoprah is an award-winning, full-service
                                 production company specializing.</p>
-                            <a href="{% url 'about' %}" class="read__more">Read more <span class="arrow_right"></span></a>
+                            <a href="#" class="read__more">Read more <span class="arrow_right"></span></a>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-3 col-sm-3">
@@ -524,9 +699,8 @@
                         <div class="footer__option__item">
                             <h5>Newsletter</h5>
                             <p>Videoprah is an award-winning, full-service production company specializing.</p>
-                            <form action="{% url 'subscribe' %}" method= "POST">
-                                {% csrf_token %}
-                                <input type="text" name="email" placeholder="Email">
+                            <form action="#">
+                                <input type="text" placeholder="Email">
                                 <button type="submit"><i class="fa fa-send"></i></button>
                             </form>
                         </div>
@@ -541,8 +715,8 @@
                             <script>
                                 document.write(new Date().getFullYear());
                             </script>
-                            All rights reserved | This website is made with <i class="fa fa-heart-o"
-                                aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Gezagn and Samuel</a>
+                            All rights reserved | This is made with <i class="fa fa-heart-o"
+                                aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Samuel and Gezagn</a>
                         </p>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </div>
@@ -554,7 +728,7 @@
 
     <!-- Js Plugins -->
     <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static  'js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
     <script src="{% static 'js/mixitup.min.js' %}"></script>
     <script src="{% static 'js/masonry.pkgd.min.js' %}"></script>

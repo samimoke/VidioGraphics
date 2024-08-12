@@ -131,7 +131,7 @@ class Blogs(ListView):
     model = Blog
     template_name = 'blog.html'
     context_object_name = 'posts'
-    paginate_by = 1
+    paginate_by = 3
 
     def get_queryset(self):
         # Your queryset logic goes here

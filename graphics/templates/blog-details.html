@@ -95,7 +95,14 @@
             </div>
         </div>
     <!-- Blog Details Hero Begin -->
-    <section class="blog-hero spad set-bg" data-setbg="{% static 'img/blog/blog-hero.jpg' %}">
+    <section class="blog-hero spad set-bg45">
+        <style>
+            .set-bg45{
+                background:url({% static 'img/blog/blog-hero.jpg' %})
+
+            }
+        </style>
+         {% comment %} data-setbg="{% static 'img/blog/blog-hero.jpg' %}"> {% endcomment %}
         <div class="container">
             <div class="row d-flex justify-content-center">
                 <div class="col-lg-8">

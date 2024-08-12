@@ -123,9 +123,15 @@
 
     <!-- Breadcrumb Begin -->
     <div
-      class="breadcrumb-option spad set-bg"
-      data-setbg="{% static 'img/breadcrumb-bg.jpg' %}"
-    >
+      class="breadcrumb-option spad set-bg46">
+      <style>
+        .set-bg46{
+        background:url({% static 'img/breadcrumb-bg.jpg' %})
+        }
+      </style>
+
+      {% comment %} data-setbg="{% static 'img/breadcrumb-bg.jpg' %}" > {% endcomment %}
+   
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
