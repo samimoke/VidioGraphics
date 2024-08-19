@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
-<html lang="zxx">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -37,7 +37,7 @@
             <div class="row">
                 <div class="col-lg-2">
                     <div class="header__logo">
-                        <a href="{% url 'home' %}"><img src="{% static 'img/logo.png' %}" alt=""></a>
+                        <a href="{% url 'home' %}"><img src="{% static 'img/logos.png' %}" alt="OMARS"></a>
                     </div>
                 </div>
                 <div class="col-lg-10">
@@ -216,7 +216,7 @@
                         </div>
                         <div class="blog__details__comment">
                             <h4>Leave a comment</h4>
-                            <form action="{% url 'add_comment' pk=post.pk %}" method="POST">
+                            <form action="{% url 'add_comment/' pk=post.pk %}" method="POST">
                                 {% csrf_token %}
                                 <div class="input__list">
                                     <input type="text" name="first_name" value="{{request.user.first_name}}" placeholder="Name">
@@ -241,14 +241,13 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <div class="footer__top__logo">
-                            <a href="{% url 'home' %}"><img src="{% static 'img/logo.png' %}" alt=""></a>
+                            <a href="{% url 'home' %}"><img src="{% static 'img/logo1.png' %}" alt="OMARS"></a>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="footer__top__social">
                             <a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-dribbble"></i></a>
                             <a href="#"><i class="fa fa-instagram"></i></a>
                             <a href="#"><i class="fa fa-youtube-play"></i></a>
                         </div>

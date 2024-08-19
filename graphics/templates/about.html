@@ -37,7 +37,7 @@
             <div class="row">
                 <div class="col-lg-2">
                     <div class="header__logo">
-                        <a href="{% url 'home' %}"><img src="{% static 'img/logo.png' %}" alt="Omar's School"></a>
+                        <a href="{% url 'home' %}"><img src="{% static 'img/logos.png' %}" alt="OMARS"></a>
                     </div>
                 </div>
                 <div class="col-lg-10">
@@ -163,8 +163,8 @@
                                     <div class="services__item__icon">
                                         <img src="{% static 'img/icons/si-3.png' %}" alt="">
                                     </div>
-                                    <h4>Video distribution</h4>
-                                    <p>Whether you’re halfway through the editing process, or you.</p>
+                                    <h4>Our Missions</h4>
+                                    <p>Photography and Videography Training Institute, Well Recognised by the Oromia Employment Bureau, and is currently providing Vocational Training in a very prophetic manner in both its branches in Burayu and Ambo.</p>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6 col-sm-6">
@@ -172,14 +172,14 @@
                                     <div class="services__item__icon">
                                         <img src="{% static 'img/icons/si-4.png' %}" alt="">
                                     </div>
-                                    <h4>Video hosting</h4>
-                                    <p>Whether you’re halfway through the editing process, or you.</p>
+                                    <h4>Our Vision</h4>
+                                    <p>To empower students with technical mastery faster their creative expression, and prepare them for professional success.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="about__text__desc">
-                            <p>Formed in 2006 by Matt Hobbs and Cael Jones, Videoprah is an award-winning, full-service
-                                production company specializing in commercial, broadcast, tourism & action sport video
+                            <p>Formed in 2006 by Ambasan and His Friends, Omars is an award-winning, full-service
+                                production company specializing in videography, graphics design, motion graphics, acting.directing, screen play writting    & Multimedia journalism video
                                 production services has been featured.</p>
                         </div>
                     </div>
@@ -279,16 +279,15 @@
                     <div class="col-lg-4">
                         <div class="testimonial__item">
                             <div class="testimonial__text">
-                                <p>Videographer delivers such a great service that it can benefit all kinds of people
-                                    from any number.</p>
+                                <p>A Photography is a moment when you press the button, it will never come back</p>
                             </div>
                             <div class="testimonial__author">
                                 <div class="testimonial__author__pic">
                                     <img src="{% static 'img/testimonial/ta-2.jpg' %}" alt="">
                                 </div>
                                 <div class="testimonial__author__text">
-                                    <h5>Krista Attorn</h5>
-                                    <span>Web Designer</span>
+                                    <h5>Ambasan</h5>
+                                    <span>CEO</span>
                                 </div>
                             </div>
                         </div>
@@ -415,12 +414,12 @@
                          {% comment %} data-setbg="{% static 'img/team/team-3.jpg' %}"> {% endcomment %}
                         <div class="team__item__text">
                             <h4>AMANDA STONE</h4>
-                            <p>Videographer</p>
+                            <p>Teachers</p>
                             <div class="team__item__social">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
                                 <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-dribbble"></i></a>
                                 <a href="#"><i class="fa fa-instagram"></i></a>
+                                <a href="#"><i class="fa fa-youtube"></i></a>
                             </div>
                         </div>
                     </div>
@@ -448,7 +447,7 @@
                 </div>
                 <div class="col-lg-12 p-0">
                     <div class="team__btn">
-                        <a href="#" class="primary-btn">Meet Our Team</a>
+                        <a href="{% url 'contactus' %}" class="primary-btn">Meet Our Team</a>
                     </div>
                 </div>
             </div>
@@ -463,7 +462,7 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <div class="footer__top__logo">
-                            <a href="{% url 'home' %}"><img src="{% static 'img/logo.png' %}" alt=""></a>
+                            <a href="{% url 'home' %}"><img src="{% static 'img/logo1.png' %}" alt="OMARS"></a>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
@@ -482,7 +481,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="footer__option__item">
                             <h5>About us</h5>
-                            <p>Formed in 2006 by Matt Hobbs and Cael Jones, Videoprah is an award-winning, full-service
+                            <p>Formed in 2006 by Ambasan and His Friends, Omars is an award-winning, full-service
                                 production company specializing.</p>
                             <a href="{% url 'about' %}" class="read__more">Read more <span class="arrow_right"></span></a>
                         </div>
@@ -493,7 +492,7 @@
                             <ul>
                                 <li><a href="#">Team</a></li>
                                 <li><a href="#">Carrers</a></li>
-                                <li><a href="#">Contact us</a></li>
+                                <li><a href="{% url 'contactus'%}">Contact us</a></li>
                                 <li><a href="#">Locations</a></li>
                             </ul>
                         </div>
@@ -505,7 +504,7 @@
                                 <li><a href="#">Feature</a></li>
                                 <li><a href="#">Latest</a></li>
                                 <li><a href="#">Browse Archive</a></li>
-                                <li><a href="#">Video for web</a></li>
+                                <li><a href="#">Video for Photography</a></li>
                             </ul>
                         </div>
                     </div>
