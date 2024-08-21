@@ -89,7 +89,7 @@
                     <ul class="dropdown">
                       <li><a href="{% url 'about' %}">About</a></li>
                       <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
-                      <li><a href="{% url 'blog' %}">Blog</a></li>
+                      <li><a href="{% url 'blog' %}">Blog </a></li>
                       {% for post in posts %}
                       <li>
                         <a href="{% url 'blog-detail' post.id %}"
@@ -109,7 +109,6 @@
               <div class="header__nav__social">
                 <a href="#"><i class="fa fa-facebook"></i></a>
                 <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-dribbble"></i></a>
                 <a href="#"><i class="fa fa-instagram"></i></a>
                 <a href="#"><i class="fa fa-youtube-play"></i></a>
               </div>
@@ -484,7 +483,7 @@
                 </p>
                 <form action="{% url 'subscribe' %}" method= "POST">
                   {% csrf_token %}
-                  <input type="text" name="email" placeholder="Email" />
+                  <input type="email" name="email" placeholder="Email" />
                   <button type="submit"><i class="fa fa-send"></i></button>
                 </form>
               </div>

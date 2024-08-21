@@ -293,6 +293,7 @@ def subscribe(request):
             form.save()
             messages.success(request,'Thank you, you are successfully subscribed')
             return redirect('home')
-    else:
-        form = SubscriptionForm()
-    return render(request, 'blog-details.html', {'form': form})
+        else:
+           form = SubscriptionForm()
+           return render(request, 'blog-details.html', {'form': form})
+       

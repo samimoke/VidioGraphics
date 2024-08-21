@@ -97,6 +97,22 @@
                         <div class="breadcrumb__links">
                             <a href="{% url 'home' %}">Home</a>
                             <span>About</span>
+                              {% if messages %}
+         {% for msg in messages %}
+         {% if msg.tags == 'error' %}
+     {% comment %} <div class="error-message" style="background-color: red;"> {% endcomment %}
+            <div class="alert alert-danger" role ="alert";>
+               {{ msg }}
+               
+            </div>
+            {% else %}
+            <div class="alert alert-{{msg.tags}}" role ="alert">
+              {{msg}}
+          </div>
+
+         {% endif %}
+      {% endfor %}
+      {% endif %}
                         </div>
                     </div>
                 </div>
@@ -416,10 +432,10 @@
                             <h4>AMANDA STONE</h4>
                             <p>Teachers</p>
                             <div class="team__item__social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                                <a href="#"><i class="fa fa-youtube"></i></a>
+                                <a href="#"><i class="fa fa-facebook"_blank></i></a>
+                                <a href="#"><i class="fa fa-twitter"_blank></i></a>
+                                <a href="#"><i class="fa fa-instagram"_blank></i></a>
+                                <a href="#"><i class="fa fa-youtube"_blank></i></a>
                             </div>
                         </div>
                     </div>
@@ -514,7 +530,7 @@
                             <p>Videoprah is an award-winning, full-service production company specializing.</p>
                             <form action="{% url 'subscribe' %}" method="POST">
                                 {% csrf_token %}
-                                <input type="text" name="email" placeholder="Email">
+                                <input type="email" name="email" placeholder="Email">
                                 <button type="submit"><i class="fa fa-send"></i></button>
                             </form>
                         </div>

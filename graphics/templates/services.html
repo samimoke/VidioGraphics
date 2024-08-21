@@ -138,6 +138,22 @@
               <div class="breadcrumb__links">
                 <a href="{% url 'home' %}">Home</a>
                 <span>Services</span>
+          {% if messages %}
+         {% for msg in messages %}
+         {% if msg.tags == 'error' %}
+     {% comment %} <div class="error-message" style="background-color: red;"> {% endcomment %}
+            <div class="alert alert-danger" role ="alert";>
+               {{ msg }}
+               
+            </div>
+            {% else %}
+            <div class="alert alert-{{msg.tags}}" role ="alert">
+              {{msg}}
+          </div>
+
+         {% endif %}
+      {% endfor %}
+      {% endif %}
               </div>
             </div>
           </div>
@@ -411,7 +427,7 @@
                 </p>
                 <form action="{% url 'subscribe' %}" method ="POST">
                   {% csrf_token %}
-                  <input type="text" name="email" placeholder="Email" />
+                  <input type="email" name="email" placeholder="Email" />
                   <button type="submit"><i class="fa fa-send"></i></button>
                 </form>
               </div>
