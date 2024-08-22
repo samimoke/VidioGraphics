@@ -5,6 +5,9 @@
 .primaryBg {
     background: rgba(141, 191, 111, 1);
 }
+.brandColor{
+    background: #f60;
+}
 
 .primaryColor {
     color: rgba(141, 194, 11, 111, 1);

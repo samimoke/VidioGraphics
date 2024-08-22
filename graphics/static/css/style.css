@@ -297,11 +297,12 @@ ol {
   Header
 -----------------------*/
 .header {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   width: 100%;
-  background: transparent;
+  /* background-color: #2d3436; */
+  background-color: #041427;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   z-index: 9;
 }
@@ -371,6 +372,13 @@ ol {
   padding: 8px 20px;
   text-transform: capitalize;
 }
+.header__nav__menu ul li .dropdown li a:hover {
+  background-color: #F60;
+  color: white;
+  font-weight: 500;
+  font-size: 24px;
+  font-style: italic;
+}
 .header__nav__menu ul li .dropdown li a:after {
   display: none;
 }
@@ -429,6 +437,9 @@ ol {
 /*---------------------
   Hero
 -----------------------*/
+.hero{
+  border: 3px solid blue;
+}
 .hero__slider.owl-carousel .owl-item.active .hero__text span {
   top: 0;
   opacity: 1;
@@ -519,6 +530,15 @@ ol {
   -o-transition: all, 0.7s;
   transition: all, 0.7s;
 }
+/* --------------------------
+Services Start
+ */
+.services{
+  border: 3px solid green;
+}
+ /* --------------------------
+Services End
+ */
 
 /*---------------------
   Work
@@ -526,6 +546,7 @@ ol {
 .work {
   overflow: hidden;
   background: #100028;
+  border: 3px solid #f60;
 }
 
 .work__gallery {
@@ -707,6 +728,7 @@ ol {
   Team
 -----------------------*/
 .team {
+  border: 3px solid red;
   padding-bottom: 90px;
 }
 
