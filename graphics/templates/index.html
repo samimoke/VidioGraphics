@@ -38,7 +38,7 @@
             <div class="row">
                 <div class="col-lg-2">
                     <div class="header__logo">
-                        <a href="{% url 'home' %}"><img src="{% static 'img/logon.png' %}" alt="OMARS'"></a>
+                        <a href="{% url 'home' %}"><img src="{% static 'img/omarlogo.png' %}" alt="OMARS'"></a>
                     </div>
                 </div>
                 <div class="col-lg-10">
@@ -86,8 +86,10 @@
         <div class="hero__slider owl-carousel">
             <div class="hero__item set-bg11" >
              <style>
+                   
                         .set-bg11{
-                            background: url({% static 'img/hero/hero-1.jpg' %})
+                            background-color:rgb(57, 15, 209);
+                            {% comment %} background: url({% static 'img/hero/hero-1.jpg' %}) {% endcomment %}
                             
                         }
                     </style>
@@ -98,8 +100,8 @@
                         <div class="col-lg-6">
                             <div class="hero__text">
                                  
-                                <span>For graphics and video editing</span>
-                                <h2>Omars' Portfolio</h2>
+                                <span style="color: #f60;">For graphics and video editing</span>
+                                <h2 style="color: #f60;">Omars' Portfolio</h2>
                                 <a href="{% url 'about' %}" class="primary-btn">See more about us</a>
                             </div>
                         </div>
@@ -109,7 +111,8 @@
             <div class="hero__item set-bg12" >
                   <style>
                         .set-bg12{
-                            background: url({% static 'img/hero/hero-1.jpg' %})
+                            background-color:rgb(57, 15, 209);
+                            {% comment %} background: url({% static 'img/hero/hero-1.jpg' %}) {% endcomment %}
                         }
                     </style>
                 {% comment %} data-setbg="{% static 'img/hero/hero-1.jpg' %}"> {% endcomment %}
@@ -117,7 +120,7 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="hero__text">
-                                <span>For Photo and video editing</span>
+                                <span style="color: #f60;">For Photo and video editing</span>
                                 <h2 style="color: #f60;">Omar’s Portfolio</h2>
                                 <a href="{% url 'about' %}" class="primary-btn">See more about us</a>
                             </div>
@@ -128,7 +131,8 @@
         <div class="hero__item set-bg9" >
               <style>
                         .set-bg9{
-                            background: url({% static 'img/hero/hero-1.jpg' %})
+                            background-color:rgb(57, 15, 209)
+                            {% comment %} background: url({% static 'img/hero/hero-1.jpg' %}) {% endcomment %}
                             
 
                         }
@@ -138,8 +142,8 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="hero__text">
-                                <span>For Photo and Video Editing</span>
-                                <h2>Omars’s Portfolio</h2>
+                                <spanstyle="color: #f60;">For Photo and Video Editing</span>
+                                <h2 style="color: #f60;">Omars’s Portfolio</h2>
                                 <a href="{% url 'about' %}" class="primary-btn">See more about us</a>
                             </div>
                         </div>
@@ -221,15 +225,16 @@
             <div class="work__item wide__item set-bg2">
                 <style> 
              .set-bg2{
-                            background: url({% static 'img/work/work-1.jpg' %})
+                           background-color:rgb(57, 15, 209)
+                            {% comment %} background: url({% static 'img/work/work-1.jpg' %}) {% endcomment %}
                             
 
                         }
                     </style>
             {% comment %} data-setbg="{% static 'img/work/work-1.jpg' %}"> {% endcomment %}
             {% for videos in video.all %}
-          <video class="play-btn video-popup" control> 
-            <source src="{{ videos.video.url }}"  type="video/mp4" ><i class="fa fa-play"></i></video>
+          <video class="play-btn video-popup" controls> 
+            <source src="{{ videos.myvideo.url }}"  type="video/mp4" ><i class="fa fa-play"></i></video>
                 {% comment %} <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i {% endcomment %}
                         {% comment %} class="fa fa-play"></i></a> {% endcomment %}
                 <div class="work__item__hover">
@@ -245,8 +250,8 @@
             </div>
             <div class="work__item small__item set-bg3">
                 <style>
-            .set-bg3{
-                            background: url({% static 'img/work/work-2.jpg' %})
+            .set-bg3{       background-color:rgb(57, 15, 209)
+                            {% comment %} background: url({% static 'img/work/work-2.jpg' %}) {% endcomment %}
                             
 
                         }
@@ -264,8 +269,8 @@
             </div>
             <div class="work__item small__item set-bg4">
                 <style>
-            .set-bg4{
-                            background: url({% static 'img/work/work-3.jpg' %})
+            .set-bg4{      background-color: rgb(57, 15, 209)
+                            {% comment %} background: url({% static 'img/work/work-3.jpg' %}) {% endcomment %}
                             
 
                         }
@@ -412,7 +417,8 @@
     <section class="team spad set-bg100" >
      <style>
                         .set-bg100{
-                            background: url({% static 'img/team-bg.jpg' %})
+                             background-color: rgb(57, 15, 209)
+                            {% comment %} background: url({% static 'img/team-bg.jpg' %}) {% endcomment %}
 
                         }
                     </style> 
@@ -431,6 +437,7 @@
                     <div class="team__item set-bg14">
                     <style>
                         .set-bg14{
+                            {% comment %} background-color: rgb(57, 15, 209) {% endcomment %}
                             background: url({% static 'img/team/gr3.png' %})
 
                         }
@@ -451,6 +458,7 @@
                     <div class="team__item team__item--second set-bg15">
                         <style>
                         .set-bg15{
+                            {% comment %} background-color: rgb(57, 15, 209) {% endcomment %}
                             background: url({% static 'img/team/group1.png' %})
 
                         }
