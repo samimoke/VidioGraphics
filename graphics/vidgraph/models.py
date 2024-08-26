@@ -74,7 +74,7 @@ class Subscription(models.Model):
     def __str__(self):
         return self.email
 class Video(models.Model):
-    video=models.FileField(upload_to='video/')
+    myvideo=models.FileField(upload_to='video/')
     title=models.CharField(max_length=300)
     created_on=models.DateTimeField(auto_now_add=True)
     Author=models.ForeignKey(User,on_delete=models.CASCADE)
