@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
-<html lang="zxx">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -37,7 +37,7 @@
             <div class="row">
                 <div class="col-lg-2">
                     <div class="header__logo">
-                        <a href="{% url 'home' %}"><img src="{% static 'img/logo.png' %}" alt=""></a>
+                        <a href="{% url 'home' %}"><img src="{% static 'img/logos.png' %}" alt="OMARS"></a>
                     </div>
                 </div>
                 <div class="col-lg-10">
@@ -69,7 +69,6 @@
                         <div class="header__nav__social">
                             <a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-dribbble"></i></a>
                             <a href="#"><i class="fa fa-instagram"></i></a>
                             <a href="#"><i class="fa fa-youtube-play"></i></a>
                         </div>
@@ -216,8 +215,10 @@
                         </div>
                         <div class="blog__details__comment">
                             <h4>Leave a comment</h4>
-                            <form action="{% url 'add_comment' pk=post.pk %}" method="POST">
+                            {% for post in Posts %}
+                            <form action="{% url 'add_comment/' pk=post.pk %}" method="POST">
                                 {% csrf_token %}
+
                                 <div class="input__list">
                                     <input type="text" name="first_name" value="{{request.user.first_name}}" placeholder="Name">
                                     <input type="text" name="email" value="{{request.user.email}}"placeholder="Email">
@@ -226,6 +227,7 @@
                                 <textarea name="body" placeholder="Comment"></textarea>
                                 <button type="submit" class="site-btn">Send Message</button>
                             </form>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
@@ -241,16 +243,15 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <div class="footer__top__logo">
-                            <a href="{% url 'home' %}"><img src="{% static 'img/logo.png' %}" alt=""></a>
+                            <a href="{% url 'home' %}"><img src="{% static 'img/logo1.png' %}" alt="OMARS"></a>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="footer__top__social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-dribbble"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-youtube-play"></i></a>
+                            <a href="#"><i class="fa fa-facebook"_blank></i></a>
+                            <a href="#"><i class="fa fa-twitter"_blank></i></a>
+                            <a href="#"><i class="fa fa-instagram"_blank></i></a>
+                            <a href="#"><i class="fa fa-youtube-play"_blank></i></a>
                         </div>
                     </div>
                 </div>
@@ -260,7 +261,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="footer__option__item">
                             <h5>About us</h5>
-                            <p>Formed in 2006 by Matt Hobbs and Cael Jones, Videoprah is an award-winning, full-service
+                            <p>Formed in 2006 by Ambasan and His Friends, Omars is an award-winning, full-service
                                 production company specializing.</p>
                             <a href="{% url 'about' %}" class="read__more">Read more <span class="arrow_right"></span></a>
                         </div>
@@ -293,7 +294,7 @@
                             <p>Videoprah is an award-winning, full-service production company specializing.</p>
                             <form action="{% url 'subscribe' %}" method="POST">
                                 {% csrf_token %}
-                                <input type="text" name="email" placeholder="Email">
+                                <input type="email" name="email" placeholder="Email">
                                 <button type="submit"><i class="fa fa-send"></i></button>
                             </form>
                         </div>

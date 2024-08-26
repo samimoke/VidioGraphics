@@ -1,7 +1,7 @@
 from django.shortcuts import render,HttpResponse, get_object_or_404
 from .forms import ContactForm
 from django.core.mail import send_mail
-from .models import Blog
+from .models import Blog, Video
 from django.http import JsonResponse
 from .models import User
 from django.views.generic import ListView,DetailView
@@ -72,9 +72,9 @@ def SignupPage(request):
     context = {'form' : form}
     return render(request, 'Sign-in-siginup.html')
 def home(request):
-    context = {}
-    return render(request,'index.html')
-
+    video=Video.objects.all()
+    # context = {video:'video'}
+    return render(request,'index.html',{'video':video})
 def about(request):
     return render(request,'about.html')
     
@@ -293,6 +293,7 @@ def subscribe(request):
             form.save()
             messages.success(request,'Thank you, you are successfully subscribed')
             return redirect('home')
-    else:
-        form = SubscriptionForm()
-    return render(request, 'blog-details.html', {'form': form})
+        else:
+           form = SubscriptionForm()
+           return render(request, 'blog-details.html', {'form': form})
+       

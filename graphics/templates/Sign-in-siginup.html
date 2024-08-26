@@ -86,7 +86,7 @@
           <div class="col-lg-2">
             <div class="header__logo">
               <a href="{% url 'home' %}"
-                ><img src="{% static 'img/logo.png' %}" alt=""
+                ><img src="{% static 'img/logos.png' %}" alt="OMARS"
               /></a>
             </div>
           </div>
@@ -207,6 +207,22 @@
             <div class="form-box login-form p-md-5 p-3">
               <div class="form-title text-center">
                 <h2 class="fw-bold mb-2">Login</h2>
+                  {% if messages %}
+         {% for msg in messages %}
+         {% if msg.tags == 'error' %}
+     {% comment %} <div class="error-message" style="background-color: red;"> {% endcomment %}
+            <div class="alert alert-danger" role ="alert";>
+               {{ msg }}
+               
+            </div>
+            {% else %}
+            <div class="alert alert-{{msg.tags}}" role ="alert">
+              {{msg}}
+          </div>
+
+         {% endif %}
+      {% endfor %}
+      {% endif %}
               </div>
               <form action="{% url 'login' %}" class="justify-content-center align-items-centerm" method="POST" >
                  {% csrf_token %}
@@ -325,7 +341,7 @@
           <div class="row">
             <div class="col-lg-6 col-md-6">
               <div class="footer__top__logo">
-                <a href="{% url 'home' %}"><img src="{% static 'img/logo.png' %}" alt="" /></a>
+                <a href="{% url 'home' %}"><img src="{% static 'img/logos.png' %}" alt="OMARS" /></a>
               </div>
             </div>
             <div class="col-lg-6 col-md-6">
@@ -379,12 +395,12 @@
               <div class="footer__option__item">
                 <h5>Newsletter</h5>
                 <p>
-                  Videoprah is an award-winning, full-service production company
+                  Omars is an award-winning, full-service production company
                   specializing.
                 </p>
                 <form action="{% url 'subscribe' %}" method="POST">
                   {% csrf_token %}
-                  <input type="text" name="email" placeholder="Email" />
+                  <input type="email" name="email" placeholder="Email" />
                   <button title="submit" type="submit">
                     <i class="fa fa-send"></i>
                   </button>
