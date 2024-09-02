@@ -348,7 +348,7 @@ ol {
 }
 
 .header__logo {
-  padding: 30px 0;
+  padding: 30px 0px;
   background-color: white;
   border-radius: 10px;
   margin: 20px 0px 20px 0px;
@@ -378,7 +378,7 @@ ol {
 .header__nav__menu ul li {
   list-style: none;
   display: inline-block;
-  margin-right: 45px;
+  margin-right: 20px;
   position: relative;
 }
 .header__nav__menu ul li.active a:after {
@@ -435,9 +435,9 @@ ol {
   display: none;
 }
 .header__nav__menu ul li a {
-  font-size: 19px;
+  font-size: 22px;
   font-family: "Bree Serif", serif;
-  font-weight: 800;
+  font-weight: 700;
   font-style: normal;
   /* font-family: "Play", sans-serif; */
   color: #ffffff;
@@ -479,7 +479,7 @@ ol {
 .header__nav__social a {
   color: #f60;
   font-size: 18px;
-  margin-right: 18px;
+  margin-right: 15px;
 }
 
 .header__nav__social a:last-child {
@@ -490,11 +490,11 @@ ol {
   display: none;
 }
 
-.nav_socials{
+/* .nav_socials{
   display: flex;
   justify-content: space-between;
   background-color: #264c98;
-  padding: 20px;
+  padding: 15px;
   margin-top: 27px;
   width: 100%;
   border-radius: 10px;
@@ -504,26 +504,18 @@ ol {
   margin-right: 5px;
 }
 .email_socials i {
-  /* padding: 10px; */
   margin-right: 7px;
   color: #f60;
   font-size: 30px;
 }
 .email_socials a {
-  /* padding: 10px; */
-  /* margin-right: 7px; */
   color: white;
   font-size: 22px;
 }
 .email_socials a:hover {
-  /* padding: 10px; */
-  /* margin-right: 7px; */
   color: #f60;
   font-size: 22px;
 }
-/* .nav_socials phone_socials{
-  flex: 1;
-} */
 
 .phone_socials i{
   margin-right: 7px;
@@ -537,16 +529,19 @@ ol {
   font-weight: 600;
 }
 .phone_socials a:hover {
-  /* padding: 10px; */
-  /* margin-right: 7px; */
   color: #f60;
   font-size: 22px;
-}
+} */
 /*---------------------
   Hero
 -----------------------*/
 .hero{
   /* border: 3px solid blue; */
+}
+.set-bg110, .set-bg12, .set-bg9 {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .hero__slider.owl-carousel .owl-item.active .hero__text span {
   top: 0;
@@ -600,7 +595,13 @@ ol {
 .hero__item {
   height: 100vh;
   padding-top: 255px;
+  position: relative;
 }
+.owl-item {
+    height: 100%;
+    width: 100%;
+}
+
 
 .hero__text span {
   color: #ffffff;
@@ -845,10 +846,14 @@ Services End
 }
 
 .team__item {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
   height: 390px;
   position: relative;
   overflow: hidden;
 }
+
 .team__item:hover .team__item__text {
   bottom: 0;
 }
