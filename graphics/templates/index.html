@@ -12,9 +12,47 @@
     <title>Omars School</title>
 
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+        rel="stylesheet"> -->
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kalnia+Glaze:wght@100..700&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Passion+One:wght@400;700;900&display=swap" rel="stylesheet">
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
@@ -47,7 +85,9 @@
             <div class="row">
                 <div class="col-lg-2">
                     <div class="header__logo">
-                        <a href="{% url 'home' %}"><img src="{% static 'img/logo/omarlogo.png' %}" alt="OMARS'"></a>
+              <a href="{% url 'home' %}"><img src="{% static 'img/icon/omars-lg.png' %}" alt="OMARS">
+                        {% comment %} <a href="{% url 'home' %}"><img src="{% static 'img/icon/omars-lg.png' %}" alt="OMARS'"> {% endcomment %}
+                        </a>
                     </div>
                 </div>
                 <div class="col-lg-10">
@@ -56,7 +96,7 @@
                             <ul>
                                 <li class="active"><a href="{% url 'home' %}">Home</a></li>
                                 <li><a href="{% url 'about' %}">About</a></li>
-                                <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
+                                <li><a href="{% url 'portfolio' %}">Our Works</a></li>
                                 <li><a href="{% url 'service' %}">Services</a></li>
                                 <li><a href="#" >Pages</a>
                                     <ul class="dropdown">
@@ -75,8 +115,30 @@
                                 <li><a href="{% url 'register' %}">Login</a></li>
                                 {% endif %}
                             </ul>
+
+                            <div class="nav_socials">
+                                <div class="email_socials">
+                                    <i class="fa fa-envelope"></i> <a href="mailto:greatbeki22@gmail.com">greatbeki22@gmail.com</a>
+                                </div>
+
+                                <div class="phone_socials">
+                                    <i class="fa fa-phone"></i> <a href="tel:+251911000000">+251961305788</a>
+                                </div>
+                            </div>
                         </nav>
                         <div class="header__nav__social">
+                            <div style="display:flex; flex-direction: column; background-color: #111010; border-radius: 10px; padding: 10px; margin-bottom: 27px; align-items: center; justify-content: center; border: 2px solid #f60;" class="apply_btn">
+                                <a style="   font-family: 'Kalnia Glaze', serif;
+                                font-optical-sizing: auto;
+                                font-weight: 700;
+                                font-style: normal;
+                                font-variation-settings:
+                                  'wdth' 100; " href="#">Apply Now</a>
+
+                                  <!--   font-family: 'Passion One', sans-serif;
+                                font-weight: 700;
+                                font-style: normal; font-size: 20px; -->
+                            </div>
                             <a href="#"><i class="fa fa-facebook" _blank></i></a>
                             <a href="#"><i class="fa fa-twitter"_blank></i></a>
                             <a href="#"><i class="fa fa-instagram"_blank></i></a>
@@ -95,10 +157,8 @@
         <div class="hero__slider owl-carousel">
             <div class="hero__item set-bg11" >
              <style>
-                   
                         .set-bg11{
-                            background-color:rgb(57, 15, 209);
-                            {% comment %} background: url({% static 'img/hero/hero-1.jpg' %}) {% endcomment %}
+                            background: url({% static 'img/hero/hero-1.jpg' %})
                             
                         }
                     </style>
@@ -109,8 +169,8 @@
                         <div class="col-lg-6">
                             <div class="hero__text">
                                  
-                                <span style="color: #f60;">For graphics and video editing</span>
-                                <h2 style="color: #f60;">Omars' Portfolio</h2>
+                                <span>For graphics and video editing</span>
+                                <h2>Omars' Portfolio</h2>
                                 <a href="{% url 'about' %}" class="primary-btn">See more about us</a>
                             </div>
                         </div>
@@ -120,8 +180,7 @@
             <div class="hero__item set-bg12" >
                   <style>
                         .set-bg12{
-                            background-color:rgb(57, 15, 209);
-                            {% comment %} background: url({% static 'img/hero/hero-1.jpg' %}) {% endcomment %}
+                            background: url({% static 'img/hero/hero-1.jpg' %})
                         }
                     </style>
                 {% comment %} data-setbg="{% static 'img/hero/hero-1.jpg' %}"> {% endcomment %}
@@ -129,7 +188,7 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="hero__text">
-                                <span style="color: #f60;">For Photo and video editing</span>
+                                <span>For Photo and video editing</span>
                                 <h2 style="color: #f60;">Omar’s Portfolio</h2>
                                 <a href="{% url 'about' %}" class="primary-btn">See more about us</a>
                             </div>
@@ -140,8 +199,7 @@
         <div class="hero__item set-bg9" >
               <style>
                         .set-bg9{
-                            background-color:rgb(57, 15, 209)
-                            {% comment %} background: url({% static 'img/hero/hero-1.jpg' %}) {% endcomment %}
+                            background: url({% static 'img/hero/hero-1.jpg' %})
                             
 
                         }
@@ -151,8 +209,8 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="hero__text">
-                                <spanstyle="color: #f60;">For Photo and Video Editing</span>
-                                <h2 style="color: #f60;">Omars’s Portfolio</h2>
+                                <span>For Photo and Video Editing</span>
+                                <h2>Omars’s Portfolio</h2>
                                 <a href="{% url 'about' %}" class="primary-btn">See more about us</a>
                             </div>
                         </div>
@@ -171,7 +229,7 @@
                     <div class="services__title">
                         <div class="section-title">
                             <span>Our services</span>
-                            <h2>What We do?</h2>
+                            <h2>What We Do?</h2>
                         </div>
                         <p>Pre-Wedding/Mask photography service.</p>
                         <a href="{% url 'service' %}" class="primary-btn">View all services</a>
@@ -186,6 +244,7 @@
                                 </div>
                                 <h4>Motion graphics</h4>
                                 <p>Wedding Day Photography & Videography</p>
+                                <p>Our motion graphics service brings visual elements to life with dynamic animations and effects. Perfect for engaging audiences and enhancing video content, we create stunning motion graphics that captivate and inform.</p>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6">
@@ -193,9 +252,8 @@
                                 <div class="services__item__icon">
                                     <img src="{% static 'img/icons/si-2.png' %}" alt="">
                                 </div>
-                                <h4>Scriptwriting and Editing</h4>
-                                <p>Whether you’re halfway through the editing process, or you haven’t even started, our
-                                    post production services can put the finishing touches.</p>
+                                <h4>Script Writing and Editing</h4>
+                                <p>Our script writing and editing service provides professional assistance in crafting and refining your script. Whether starting from scratch or polishing an existing draft, we ensure your narrative is compelling and clear.</p>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6">
@@ -205,6 +263,7 @@
                                 </div>
                                 <h4>Video distribution</h4>
                                 <p>Birthday Services/Birth Day Photography</p>
+                                <p>Our video distribution service ensures your content reaches the right audience across various platforms. We manage the distribution process to maximize your video's visibility and impact.</p>
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6">
@@ -214,6 +273,7 @@
                                 </div>
                                 <h4>Video Hosting</h4>
                                 <p>Baby Shower Services/Baby shower Photography</p>
+                                <p>With our video hosting service, you get a reliable platform to store and stream your videos. We offer high-quality hosting solutions that ensure smooth playback and security for your video content.</p>
                             </div>
                         </div>
                     </div>
@@ -230,16 +290,15 @@
             <div class="work__item wide__item set-bg2">
                 <style> 
              .set-bg2{
-                           background-color:rgb(57, 15, 209)
-                            {% comment %} background: url({% static 'img/work/work-1.jpg' %}) {% endcomment %}
+                            background: url({% static 'img/work/work-1.jpg' %})
                             
 
                         }
                     </style>
             {% comment %} data-setbg="{% static 'img/work/work-1.jpg' %}"> {% endcomment %}
             {% for videos in video.all %}
-          <video class="play-btn video-popup" controls> 
-            <source src="{{ videos.myvideo.url }}"  type="video/mp4" ><i class="fa fa-play"></i></video>
+          <video class="play-btn video-popup" control> 
+            <source src="{{ videos.video.url }}"  type="video/mp4" ><i class="fa fa-play"></i></video>
                 {% comment %} <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i {% endcomment %}
                         {% comment %} class="fa fa-play"></i></a> {% endcomment %}
                 <div class="work__item__hover">
@@ -255,8 +314,8 @@
             </div>
             <div class="work__item small__item set-bg3">
                 <style>
-            .set-bg3{       background-color:rgb(57, 15, 209)
-                            {% comment %} background: url({% static 'img/work/work-2.jpg' %}) {% endcomment %}
+            .set-bg3{
+                            background: url({% static 'img/work/work-2.jpg' %})
                             
 
                         }
@@ -274,8 +333,8 @@
             </div>
             <div class="work__item small__item set-bg4">
                 <style>
-            .set-bg4{      background-color: rgb(57, 15, 209)
-                            {% comment %} background: url({% static 'img/work/work-3.jpg' %}) {% endcomment %}
+            .set-bg4{
+                            background: url({% static 'img/work/work-3.jpg' %})
                             
 
                         }
@@ -422,8 +481,7 @@
     <section class="team spad set-bg100" >
      <style>
                         .set-bg100{
-                             background-color: rgb(57, 15, 209)
-                            {% comment %} background: url({% static 'img/team-bg.jpg' %}) {% endcomment %}
+                            background: url({% static 'img/team-bg.jpg' %})
 
                         }
                     </style> 
@@ -442,7 +500,6 @@
                     <div class="team__item set-bg14">
                     <style>
                         .set-bg14{
-                            {% comment %} background-color: rgb(57, 15, 209) {% endcomment %}
                             background: url({% static 'img/team/gr3.png' %})
 
                         }
@@ -463,7 +520,6 @@
                     <div class="team__item team__item--second set-bg15">
                         <style>
                         .set-bg15{
-                            {% comment %} background-color: rgb(57, 15, 209) {% endcomment %}
                             background: url({% static 'img/team/group1.png' %})
 
                         }

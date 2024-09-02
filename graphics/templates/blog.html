@@ -36,9 +36,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-2">
-                    <div class="header__logo">
-                        <a href="{% url 'home' %}"><img src="{% static 'img/logo/omarlogo.png' %}" alt="OMARS"></a>
-                    </div>
+                    <div style="display: flex; justify-content: center; align-items: center; width: 80px; height: 80px;" class="header__logo">
+                        <a href="{% url 'home' %}"><img src="{% static 'img/icon/omars-lg.png' %}" alt="OMARS"
+                        /></a>
+                      </div>
                 </div>
                 <div class="col-lg-10">
                     <div class="header__nav__option">
@@ -47,16 +48,18 @@
                                 <li><a href="{% url 'home'%}">Home</a></li>
                                 <li><a href="{% url 'about' %}">About</a></li>
                                 <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
-                                <li class="active"><a href="{% url 'service' %}">Services</a></li>
-                                <li><a href="#">Pages</a>
-                                    <ul class="dropdown">
-                                        <li><a href="{% url 'about' %}">About</a></li>
-                                        <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
-                                        <li><a href="{% url 'blog' %}">Blog</a></li>
-                                        {% for post in posts %}
-                                        <li><a href="{% url 'blog-detail' post.id %}">Blog Details</a></li>
-                                        {% endfor %}
-                                    </ul>
+                                <li ><a href="{% url 'service' %}">Services</a></li>
+                                <li class="active"><a href="#">Pages</a>
+                                        <ul class="dropdown">
+                      <li><a href="{% url 'about' %}">About</a></li>
+                      <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
+                      <li><a href="{% url 'blog' %}">Blog</a></li>
+                      {% for post in posts %}
+                      <li>
+                        <a href="{% url 'blog-detail' post.id %}">Blog Details</a>
+                      </li>
+                      {% endfor %}
+                    </ul>
                                 </li>
                                 <li><a href="{% url 'contactus' %}">Contact</a></li>
                                 {% if request.user.is_authenticated %}
