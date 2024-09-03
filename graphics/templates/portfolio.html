@@ -64,7 +64,6 @@
     </div>
 
     <!-- Header Section Begin -->
-      <!-- Header Section Begin -->
     <header class="header">
       <div class="container">
         <div class="row">
@@ -73,60 +72,6 @@
               <a href="{% url 'home' %}"><img src="{% static 'img/icon/omars-lg.png' %}" alt="OMARS"
               /></a>
             </div>
-          </div>
-          <div class="col-lg-10">
-            <div class="header__nav__option">
-              <nav class="header__nav__menu mobile-menu">
-                <ul>
-                  <li><a href="{% url 'home' %}">Home</a></li>
-                  <li><a href="{% url 'about' %}">About</a></li>
-                  <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
-                  <li class="active">
-                    <a href="{% url 'service' %}">Services</a>
-                  </li>
-                  <li>
-                    <a href="#">Pages</a>
-                    <ul class="dropdown">
-                      <li><a href="{% url 'about' %}">About</a></li>
-                      <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
-                      <li><a href="{% url 'blog' %}">Blog</a></li>
-                      {% for post in posts %}
-                      <li>
-                        <a href="{% url 'blog-detail' post.id %}">Blog Details</a>
-                      </li>
-                      {% endfor %}
-                    </ul>
-                  </li>
-                  <li><a href="{% url 'contactus' %}">Contact</a></li>
-                  {% if request.user.is_authenticated %}
-                  <li><a href="{% url 'logout' %}">Logout</a></li>
-                  {% else %}
-                  <li><a href="{% url 'register' %}">Login</a></li>
-                  {% endif %}
-                </ul>
-              </nav>
-              <div class="header__nav__social">
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
-                <a href="#"><i class="fa fa-dribbble"></i></a>
-                <a href="#"><i class="fa fa-instagram"></i></a>
-                <a href="#"><i class="fa fa-youtube-play"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="mobile-menu-wrap"></div>
-      </div>
-    </header>
-    <!-- Header End -->
-    <!-- <header class="header">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-2">
-            <div style="display: flex; justify-content: center; align-items: center; width: 80px; height: 80px;" class="header__logo">
-              <a href="{% url 'home' %}"><img src="{% static 'img/icon/omars-lg.png' %}" alt="OMARS"
-              /></a>
-            </div>
             </div>
           </div>
           <div class="col-lg-10">
@@ -136,7 +81,7 @@
                   <li><a href="{% url 'home' %}">Home</a></li>
                   <li><a href="{% url 'about' %}">About</a></li>
                   <li class="active">
-                    <a href="{% url 'portfolio' %}">Our Work</a>
+                    <a href="{% url 'portfolio' %}">Portfolio</a>
                   </li>
                   <li><a href="{% url 'service' %}">Services</a></li>
                   <li>
@@ -172,7 +117,7 @@
         </div>
         <div id="mobile-menu-wrap"></div>
       </div>
-    </header> -->
+    </header>
     <!-- Header End -->
 
     <!-- Breadcrumb Begin -->
@@ -479,7 +424,7 @@
           <div class="row">
             <div class="col-lg-6 col-md-6">
               <div class="footer__top__logo">
-                <a href="{% url 'home' %}"><img src="{% static 'img/logos.png' %}" alt="OMARS" /></a>
+                <a href="{% url 'home' %}"><img src="{% static 'img/logo/omarlogo.png' %}" alt="OMARS" /></a>
               </div>
             </div>
             <div class="col-lg-6 col-md-6">
