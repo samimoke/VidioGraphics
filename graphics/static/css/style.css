@@ -347,6 +347,10 @@ ol {
   z-index: 9;
 }
 
+/* .header .row{
+  margin: 0;
+} */
+
 .header__logo {
   padding: 30px 0px;
   background-color: white;
