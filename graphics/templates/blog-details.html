@@ -46,12 +46,12 @@
                             <ul>
                                 <li><a href="{% url 'home' %}">Home</a></li>
                                 <li><a href="{% url 'about' %}">About</a></li>
-                                <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
+                                <li><a href="{% url 'portfolio' %}">Our Works</a></li>
                                 <li class="active"><a href="{% url 'service' %}">Services</a></li>
                                 <li><a href="#">Pages</a>
                                     <ul class="dropdown">
                                         <li><a href="{% url 'about' %}">About</a></li>
-                                        <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
+                                        <li><a href="{% url 'portfolio' %}">Our Works</a></li>
                                         <li><a href="{% url 'blog' %}">Blog</a></li>
                                         {% for post in posts %}
                                         <li><a href="{% url 'blog-detail' post.id %}">Blog Details</a></li>
@@ -252,6 +252,11 @@
                             <a href="#"><i class="fa fa-twitter"_blank></i></a>
                             <a href="#"><i class="fa fa-instagram"_blank></i></a>
                             <a href="#"><i class="fa fa-youtube-play"_blank></i></a>
+                        </div>
+
+                        <div style="margin-top: 20px;" class="image-2024"></div>
+                            <a href=""><img style="height: 270px; width: 270px;border-radius: 10px;" src="../static/img/blog/blog-13.jpg" alt=""></a>
+                            <a href=""><img style="height: 270px; width: 270px; margin-left: 10px; border-radius: 10px;" src="../static/img/blog/blog-12.jpg" alt=""></a>
                         </div>
                     </div>
                 </div>

@@ -47,12 +47,12 @@
                             <ul>
                                 <li><a href="{% url 'home'%}">Home</a></li>
                                 <li><a href="{% url 'about' %}">About</a></li>
-                                <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
+                                <li><a href="{% url 'portfolio' %}">Our Works</a></li>
                                 <li ><a href="{% url 'service' %}">Services</a></li>
                                 <li class="active"><a href="#">Pages</a>
                                         <ul class="dropdown">
                       <li><a href="{% url 'about' %}">About</a></li>
-                      <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
+                      <li><a href="{% url 'portfolio' %}">Our Works</a></li>
                       <li><a href="{% url 'blog' %}">Blog</a></li>
                       {% for post in posts %}
                       <li>
@@ -201,8 +201,8 @@
             <div class="footer__top">
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
-                        <div class="footer__top__logo">
-                            <a href="{% url 'home' %}"><img src="{% static 'mg/logo/omarlogo.png' %}" alt="OMARS"></a>
+                        <div class="footer__top__logo" style="background-color: #fff; padding: 10px; border-radius: 10px;">
+                            <a href="{% url 'home' %}"><img src="{% static 'img/logo/omarlogo.png' %}" alt="OMARS"></a>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
@@ -212,6 +212,11 @@
                             <a href="#"><i class="fa fa-dribbble"></i></a>
                             <a href="#"><i class="fa fa-instagram"></i></a>
                             <a href="#"><i class="fa fa-youtube-play"></i></a>
+                        </div>
+
+                        <div style="margin-top: 20px;" class="image-2024"></div>
+                            <a href=""><img style="height: 270px; width: 270px;border-radius: 10px;" src="../static/img/blog/blog-13.jpg" alt=""></a>
+                            <a href=""><img style="height: 270px; width: 270px; margin-left: 10px; border-radius: 10px;" src="../static/img/blog/blog-12.jpg" alt=""></a>
                         </div>
                     </div>
                 </div>

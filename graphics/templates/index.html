@@ -69,8 +69,8 @@
 
     <!-- Header Section Begin -->
     <header class="header">
-        <!-- <div class="container bgg">
-            <style>
+        <div class="container">
+            <!-- <style>
                 .bgg{
                     color: rgb(255, 102, 0);
                     background-color:rgb(31, 42, 112);
@@ -82,8 +82,9 @@
             <div class="row">
                 <div class="col-lg-2">
                     <div class="header__logo">
-              <a href="{% url 'home' %}"><img src="{% static 'img/icon/omars-lg.png' %}" alt="OMARS">
-                        {% comment %} <a href="{% url 'home' %}"><img src="{% static 'img/icon/omars-lg.png' %}" alt="OMARS'"> {% endcomment %}
+                        <a href="{% url 'home' %}"><img src="{% static 'img/icon/omars-lg.png' %}" alt="OMARS">
+                        {% comment %} 
+                        <a href="{% url 'home' %}"><img src="{% static 'img/icon/omars-lg.png' %}" alt="OMARS'"> {% endcomment %}
                         </a>
                     </div>
                 </div>
@@ -98,7 +99,7 @@
                                 <li><a href="#" >Pages</a>
                                     <ul class="dropdown">
                                         <li><a href="{% url 'about' %}">About</a></li>
-                                        <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
+                                        <li><a href="{% url 'portfolio' %}">Our Works</a></li>
                                         <li><a href="{% url 'blog' %}">Blog</a></li>
                                         {% for post in posts %}
                                         <li><a href="{% url 'blog-detail' post.id %}">Blog Details</a></li>
@@ -491,8 +492,8 @@
                 <div class="col-lg-3 col-md-6 col-sm-6 p-0">
                     <div class="team__item set-bg14">
                     <style>
-                        .set-bg14{
-                            background-image: url({% static 'img/team2/team1.jpg' %})
+                .set-bg14{
+                    background-image: url({% static 'img/team2/team01.jpg' %})
 
                         }
                     </style> 
@@ -697,21 +698,22 @@
         </div>
     </section>
     <!-- Call To Action Section End -->
-
-    <!-- Footer Section Begin -->
-    <footer class="footer">
-        <div class="container bgg">
-             <style>
+             <!-- <style>
           .bgg{
             background-color:rgb(31, 42, 112);
           }
           
-        </style>
+        </style> -->
+
+
+<!-- Footer Section Begin -->
+    <footer class="footer">
+        <div class="container">
             <div class="footer__top">
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
-                        <div class="footer__top__logo">
-                            <a href="#"><img src="{% static 'img/logos.png' %}" alt="OMARS"></a>
+                        <div class="footer__top__logo" style="background-color: #fff; padding: 10px; border-radius: 10px;">
+                            <a href="{% url 'home' %}"><img src="{% static 'img/logo/omarlogo.png' %}" alt="OMARS"></a>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
@@ -721,6 +723,11 @@
                             <a href="#"><i class="fa fa-dribbble"></i></a>
                             <a href="#"><i class="fa fa-instagram"></i></a>
                             <a href="#"><i class="fa fa-youtube-play"></i></a>
+                        </div>
+
+                        <div style="margin-top: 20px;" class="image-2024">
+                            <a href=""><img style="height: 270px; width: 270px;border-radius: 10px;" src="../static/img/blog/blog-13.jpg" alt=""></a>
+                            <a href=""><img style="height: 270px; width: 270px; margin-left: 10px; border-radius: 10px;" src="../static/img/blog/blog-12.jpg" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -741,7 +748,7 @@
                             <ul>
                                 <li><a href="#">Team</a></li>
                                 <li><a href="#">Carrers</a></li>
-                                <li><a href="#">Contact us</a></li>
+                                <li><a href="{% url 'contactus'%}">Contact us</a></li>
                                 <li><a href="#">Locations</a></li>
                             </ul>
                         </div>
@@ -753,15 +760,15 @@
                                 <li><a href="#">Feature</a></li>
                                 <li><a href="#">Latest</a></li>
                                 <li><a href="#">Browse Archive</a></li>
-                                <li><a href="#">Video for photography</a></li>
+                                <li><a href="#">Video for Photography</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-12">
                         <div class="footer__option__item">
                             <h5>Newsletter</h5>
-                            <p>Omars is an award-winning, full-service production company specializing.</p>
-                              <form action="{% url 'subscribe' %}" method="POST">
+                            <p>Videoprah is an award-winning, full-service production company specializing.</p>
+                            <form action="{% url 'subscribe' %}" method="POST">
                                 {% csrf_token %}
                                 <input type="email" name="email" placeholder="Email">
                                 <button type="submit"><i class="fa fa-send"></i></button>
@@ -778,8 +785,8 @@
                             <script>
                                 document.write(new Date().getFullYear());
                             </script>
-                            All rights reserved | This is made with <i class="fa fa-heart-o"
-                                aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Samuel and Gezagn</a>
+                            All rights reserved | This website is made with <i class="fa fa-heart-o"
+                                aria-hidden="true"></i> by <a href="https://colorlib.com" target="e_blank">Gezagn and Samuel</a>
                         </p>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </div>

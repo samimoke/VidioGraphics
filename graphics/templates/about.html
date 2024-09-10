@@ -37,7 +37,7 @@
             <div class="row">
                 <div class="col-lg-2">
                     <div class="header__logo">
-                        <a href="{% url 'home' %}"><img src="{% static 'img/logo/omarlogo.png' %}" alt="OMARS"></a>
+                        <a href="{% url 'home' %}"><img src="{% static 'img/icon/omars-lg.png' %}" alt="OMARS"></a>
                     </div>
                 </div>
                 <div class="col-lg-10">
@@ -46,12 +46,12 @@
                             <ul>
                                 <li><a href="{% url 'home' %}">Home</a></li>
                                 <li class="active"><a href="{% url 'about' %}">About</a></li>
-                                <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
+                                <li><a href="{% url 'portfolio' %}">Our Works</a></li>
                                 <li><a href="{% url 'service' %}">Services</a></li>
                                 <li><a href="#">Pages</a>
                                     <ul class="dropdown">
                                         <li><a href="{% url 'about' %}">About</a></li>
-                                        <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
+                                        <li><a href="{% url 'portfolio' %}">Our Works</a></li>
                                         <li><a href="{% url 'blog' %}">Blog</a></li>
                                         {% for post in posts %}
                                         <li><a href="{% url 'blog-detail' post.id %}">Blog Details</a></li>
@@ -361,14 +361,13 @@
     </section>
     <!-- Counter Section End -->
 
-    <!-- Team Section Begin -->
-    <section class="team spad set-bg24">
-          <style>
-            .set-bg24{ 
-            background: url({% static 'img/team-bg.jpg' %})
+     <!-- Team Section Begin -->
+    <section class="team spad set-bg100" >
+        <style>
+            .set-bg100{
+                background: url({% static 'img/team-bg.jpg' %})
             }
-        </style>
-         {% comment %} data-setbg="{% static 'img/team-bg.jpg' %}"> {% endcomment %}
+        </style> 
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -380,82 +379,76 @@
             </div>
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6 p-0">
-                    <div class="team__item set-bg23">
-                          <style>
-                          .set-bg23{ 
-                            background: url({% static 'img/team/team-1.jpg' %})
-                          }
-                        </style> 
-                        {% comment %} data-setbg="{% static 'img/team/team-1.jpg' %}"> {% endcomment %}
-                        <div class="team__item__text">
-                            <h4>AMANDA STONE</h4>
-                            <p>Videographer</p>
-                            <div class="team__item__social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-dribbble"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 p-0">
-                    <div class="team__item team__item--second set-bg22">
-                      <style>
-                          .set-bg22{ 
-                            background: url({% static 'img/team/team-2.jpg' %})
-                          }
-                        </style>
-                         {% comment %} data-setbg="{% static 'img/team/team-2.jpg' %}"> {% endcomment %}
-                        <div class="team__item__text">
-                            <h4>AMANDA STONE</h4>
-                            <p>Videographer</p>
-                            <div class="team__item__social">
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-dribbble"></i></a>
-                                <a href="#"><i class="fa fa-instagram"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 p-0">
-                    <div class="team__item team__item--third set-bg29">
-                        <style>
-                        .set-bg29{
-                            background:url({% static 'img/team/team-3.jpg' %})
+                    <div class="team__item set-bg14">
+                    <style>
+                        .set-bg14{
+                            background-image: url({% static 'img/team2/team1.jpg' %})
 
                         }
-                    </style>
-                         {% comment %} data-setbg="{% static 'img/team/team-3.jpg' %}"> {% endcomment %}
+                    </style> 
                         <div class="team__item__text">
-                            <h4>AMANDA STONE</h4>
-                            <p>Teachers</p>
+                            <h4>Hambasan Gudisa</h4>
+                            <p>Omars Mission Digital School General Manager</p>
+                            <div class="team__item__social">
+                                <a href="#"><i class="fa fa-facebook" _blank></i></a>
+                                <a href="#"><i class="fa fa-twitter"_blank></i></a>
+                                <a href="#"><i class="fa fa-instagram"_blank></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 p-0">
+                    <div class="team__item team__item--second set-bg15">
+                        <style>
+                        .set-bg15{
+                            background-image: url({% static 'img/team2/team2.JPG' %})
+                        }
+                    </style> 
+                        <div class="team__item__text">
+                            <h4>Lensa Abdisa</h4>
+                            <p>Omars Mission School Teacher</p>
                             <div class="team__item__social">
                                 <a href="#"><i class="fa fa-facebook"_blank></i></a>
                                 <a href="#"><i class="fa fa-twitter"_blank></i></a>
                                 <a href="#"><i class="fa fa-instagram"_blank></i></a>
-                                <a href="#"><i class="fa fa-youtube"_blank></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 p-0">
-                    <div class="team__item team__item--four set-bg21">
+                    <div class="team__item team__item--third set-bg16">
                         <style>
-                          .set-bg21{ 
-                            background: url({% static 'img/team/team-4.jpg' %})
-                          }
-                        </style>
-
-                        {% comment %} data-setbg="{% static 'img/team/team-4.jpg' %}"> {% endcomment %}
+                        .set-bg16{
+                            background-image: url({% static 'img/team2/team3.JPG' %})
+                        }
+                    </style> 
+                     {% comment %} data-setbg="{% static 'img/team/team-3.jpg' %}"> {% endcomment %}
                         <div class="team__item__text">
-                            <h4>AMANDA STONE</h4>
-                            <p>Videographer</p>
+                            <h4>Guluma Buzuneh</h4>
+                            <p>Omars Mission School Teacher</p>
                             <div class="team__item__social">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
                                 <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-dribbble"></i></a>
+                                <a href="#"><i class="fa fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6 p-0">
+                    <div class="team__item team__item--four set-bg17">
+                    <style>
+                        .set-bg17{
+                            /* background-repeat: no-repeat; */
+                            background-image: url({% static 'img/team2/team4.JPG' %});
+                        }
+                    </style> 
+                    {% comment %} data-setbg="{% static 'img/team/team-4.jpg' %}"> {% endcomment %}
+                        <div class="team__item__text">
+                            <h4>Abdifan Kasaye</h4>
+                            <p>Omars Mission School Teacher</p>
+                            <div class="team__item__social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
                                 <a href="#"><i class="fa fa-instagram"></i></a>
                             </div>
                         </div>
@@ -477,7 +470,7 @@
             <div class="footer__top">
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
-                        <div class="footer__top__logo">
+                        <div class="footer__top__logo" style="background-color: #fff; padding: 10px; border-radius: 10px;">
                             <a href="{% url 'home' %}"><img src="{% static 'img/logo/omarlogo.png' %}" alt="OMARS"></a>
                         </div>
                     </div>
@@ -488,6 +481,11 @@
                             <a href="#"><i class="fa fa-dribbble"></i></a>
                             <a href="#"><i class="fa fa-instagram"></i></a>
                             <a href="#"><i class="fa fa-youtube-play"></i></a>
+                        </div>
+
+                        <div style="margin-top: 20px;" class="image-2024"></div>
+                            <a href=""><img style="height: 270px; width: 270px;border-radius: 10px;" src="../static/img/blog/blog-13.jpg" alt=""></a>
+                            <a href=""><img style="height: 270px; width: 270px; margin-left: 10px; border-radius: 10px;" src="../static/img/blog/blog-12.jpg" alt=""></a>
                         </div>
                     </div>
                 </div>

@@ -369,12 +369,6 @@ ol {
   padding: 28px 0px;
 }
 
-/* .header__nav__option .header__nav__menu ul{
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
-  font-style: italic;
-} */
-
 .header__nav__menu {
   display: inline-block;
   margin-right: 30px;
@@ -407,7 +401,7 @@ ol {
   position: absolute;
   left: 0;
   top: 60px;
-  width: 140px;
+  width: 200px;
   background: #ffffff;
   text-align: left;
   padding: 2px 0;
@@ -431,8 +425,8 @@ ol {
 .header__nav__menu ul li .dropdown li a:hover {
   background-color: #F60;
   color: white;
-  font-weight: 500;
-  font-size: 24px;
+  font-weight: 300;
+  font-size: 13px;
   font-style: italic;
 }
 .header__nav__menu ul li .dropdown li a:after {
@@ -1033,6 +1027,10 @@ Services End
 .footer__top__social a:last-child {
   margin-right: 0;
 }
+
+/* .image-2024{
+  margin-top: 20px;
+} */
 
 .footer__option {
   padding-bottom: 35px;

@@ -3,7 +3,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Videograph Template" />
+    <meta name="description" content="Omars Mission" />
     <meta name="keywords" content="Videograph, unica, creative, html" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -95,7 +95,7 @@
                 <ul>
                   <li><a href="{% url 'home' %}">Home</a></li>
                   <li><a href="{% url 'about' %}">About</a></li>
-                  <li class="active">
+                  <li>
                     <a href="{% url 'portfolio' %}">Portfolio</a>
                   </li>
                   <li><a href="{% url 'service' %}">Services</a></li>
@@ -113,8 +113,9 @@
                     </ul>
                   </li>
                   <li><a href="{% url 'contactus' %}">Contact</a></li>
+                  <li class="active"><a href="{% url 'login' %}">Login</a></li>
                   {% if request.user.is_authenticated %}
-                  <li><a href="{% url 'login' %}">Login</a></li>
+                  
                   {% endif %}
                 </ul>
               </nav>
@@ -339,10 +340,10 @@
         <div class="footer__top">
           <div class="row">
             <div class="col-lg-6 col-md-6">
-              <div class="footer__top__logo">
-                <a href="{% url 'home' %}"><img src="{% static 'img/logo/omarlogo.png' %}" alt="OMARS" /></a>
-              </div>
-            </div>
+                        <div class="footer__top__logo" style="background-color: #fff; padding: 10px; border-radius: 10px;">
+                            <a href="{% url 'home' %}"><img src="{% static 'img/logo/omarlogo.png' %}" alt="OMARS"></a>
+                        </div>
+                    </div>
             <div class="col-lg-6 col-md-6">
               <div class="footer__top__social">
                 <a href="#"><i class="fa fa-facebook"></i></a>
@@ -351,6 +352,11 @@
                 <a href="#"><i class="fa fa-instagram"></i></a>
                 <a href="#"><i class="fa fa-youtube-play"></i></a>
               </div>
+
+              <div style="margin-top: 20px;" class="image-2024"></div>
+                            <a href=""><img style="height: 270px; width: 270px;border-radius: 10px;" src="../static/img/blog/blog-13.jpg" alt=""></a>
+                            <a href=""><img style="height: 270px; width: 270px; margin-left: 10px; border-radius: 10px;" src="../static/img/blog/blog-12.jpg" alt=""></a>
+                        </div>
             </div>
           </div>
         </div>

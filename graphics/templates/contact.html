@@ -79,13 +79,13 @@
                 <ul>
                   <li><a href="{% url 'home' %}">Home</a></li>
                   <li><a href="{% url 'about' %}">About</a></li>
-                  <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
+                  <li><a href="{% url 'portfolio' %}">Our Works</a></li>
                   <li><a href="{%  url 'service' %}">Services</a></li>
                   <li>
                     <a href="#">Pages</a>
                     <ul class="dropdown">
                       <li><a href="{% url 'about' %}">About</a></li>
-                      <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
+                      <li><a href="{% url 'portfolio' %}">Our Works</a></li>
                       <li><a href="{% url 'blog' %}">Blog</a></li>
                       {% for post in posts %}
                       <li>
@@ -202,7 +202,7 @@
               </div>
               <div class="contact__widget__item__text">
                 <h4>Email</h4>
-                <p>samimokehirpa@gmail.com</p>
+                <p>hambaaseenaa@gmail.com</p>
               </div>
             </div>
           </div>
@@ -245,10 +245,10 @@
         <div class="footer__top">
           <div class="row">
             <div class="col-lg-6 col-md-6">
-              <div class="footer__top__logo">
-                <a href="{% url 'home' %}"><img src="{% static 'img/logo/omarlogo.png' %}" alt="OMARS" /></a>
-              </div>
-            </div>
+                        <div class="footer__top__logo" style="background-color: #fff; padding: 10px; border-radius: 10px;">
+                            <a href="{% url 'home' %}"><img src="{% static 'img/logo/omarlogo.png' %}" alt="OMARS"></a>
+                        </div>
+                    </div>
             <div class="col-lg-6 col-md-6">
               <div class="footer__top__social">
                 <a href="#"><i class="fa fa-facebook"></i></a>
@@ -256,6 +256,11 @@
                 <a href="#"><i class="fa fa-instagram"></i></a>
                 <a href="#"><i class="fa fa-youtube-play"></i></a>
               </div>
+
+              <div style="margin-top: 20px;" class="image-2024"></div>
+                            <a href=""><img style="height: 270px; width: 270px;border-radius: 10px;" src="../static/img/blog/blog-13.jpg" alt=""></a>
+                            <a href=""><img style="height: 270px; width: 270px; margin-left: 10px; border-radius: 10px;" src="../static/img/blog/blog-12.jpg" alt=""></a>
+                        </div>
             </div>
           </div>
         </div>
@@ -277,7 +282,7 @@
               <div class="footer__option__item">
                 <h5>Who we are</h5>
                 <ul>
-                  <li><a href="#">Team</a></li>
+                  <li><a href="{% url "home" %}#team">Team</a></li>
                   <li><a href="#">Carrers</a></li>
                   <li><a href="{% url 'contactus' %}">Contact us</a></li>
                   <li><a href="#">Locations</a></li>
