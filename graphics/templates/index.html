@@ -9,17 +9,14 @@
     <meta name="keywords" content="Videograph, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Omars School</title>
-
+    <title>Omars Mission</title>
     <!-- Google Font -->
     <!-- <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap"
         rel="stylesheet"> -->
-
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,8 +25,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
-
-
+        
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
@@ -62,6 +58,7 @@
     <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/apply-btn.css' %}" type="text/css">
 </head>
 
 <body>
@@ -72,7 +69,7 @@
 
     <!-- Header Section Begin -->
     <header class="header">
-        <div class="container bgg">
+        <!-- <div class="container bgg">
             <style>
                 .bgg{
                     color: rgb(255, 102, 0);
@@ -80,7 +77,7 @@
                    
                 }
                 
-            </style>
+            </style> -->
             
             <div class="row">
                 <div class="col-lg-2">
@@ -128,7 +125,7 @@
                         </nav>
                         <div class="header__nav__social">
                             <div style="display:flex; flex-direction: column; background-color: #111010; border-radius: 10px; padding: 10px; margin-bottom: 27px; align-items: center; justify-content: center; border: 2px solid #f60;" class="apply_btn">
-                                <a style="   font-family: 'Kalnia Glaze', serif;
+                                <a style="font-family: 'Kalnia Glaze', serif;
                                 font-optical-sizing: auto;
                                 font-weight: 700;
                                 font-style: normal;
@@ -155,22 +152,21 @@
     <!-- Hero Section Begin -->
     <section class="hero">
         <div class="hero__slider owl-carousel">
-            <div class="hero__item set-bg11" >
+            <div class="hero__item set-bg110" >
              <style>
-                        .set-bg11{
-                            background: url({% static 'img/hero/hero-1.jpg' %})
-                            
-                        }
-                    </style>
+                .set-bg110{
+                    background-image: url({% static 'img/herobg/ombg.jpg' %});
+                    /* background: url({% static 'img/herobg/hero.jpg' %}); */
+                }
+            </style>
        
                     {% comment %} data-setbg="{% static 'img/hero/hero-1.jpg' %}"> {% endcomment %}
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="hero__text">
-                                 
-                                <span>For graphics and video editing</span>
-                                <h2>Omars' Portfolio</h2>
+                                <span style="font-family: 'Bree Serif', serif; font-size: 30px; font-weight: 600; line-height: 26px;">Graphics Design, Photo and Video Editing</span>
+                                <h2 style="font-size: 20px;">Omars Mission</h2>
                                 <a href="{% url 'about' %}" class="primary-btn">See more about us</a>
                             </div>
                         </div>
@@ -179,8 +175,10 @@
             </div>
             <div class="hero__item set-bg12" >
                   <style>
-                        .set-bg12{
-                            background: url({% static 'img/hero/hero-1.jpg' %})
+                    .set-bg12{
+                        background-image: url({% static 'img/herobg/ombg.jpg' %});
+                        /* background: url({% static 'img/herobg/hero.jpg' %}); 
+                        */
                         }
                     </style>
                 {% comment %} data-setbg="{% static 'img/hero/hero-1.jpg' %}"> {% endcomment %}
@@ -188,8 +186,8 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="hero__text">
-                                <span>For Photo and video editing</span>
-                                <h2 style="color: #f60;">Omar’s Portfolio</h2>
+                                <span style="font-family: 'Bree Serif', serif; font-size: 30px; font-weight: 600; line-height: 26px;">Acting and Directing</span>
+                                <h2 style="font-size: 20px;">Omars Mission</h2>
                                 <a href="{% url 'about' %}" class="primary-btn">See more about us</a>
                             </div>
                         </div>
@@ -198,19 +196,18 @@
             </div> 
         <div class="hero__item set-bg9" >
               <style>
-                        .set-bg9{
-                            background: url({% static 'img/hero/hero-1.jpg' %})
-                            
-
-                        }
+                .set-bg9{
+                    background-image: url({% static 'img/herobg/ombg.jpg' %});
+                        /* background: url({% static 'img/herobg/ombg.jpg' %}) */
+                    }
                     </style>
         {% comment %} data-setbg="{% static 'img/hero/hero-1.jpg' %}"> {% endcomment %}
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="hero__text">
-                                <span>For Photo and Video Editing</span>
-                                <h2>Omars’s Portfolio</h2>
+                                <span style="font-family: 'Bree Serif', serif; font-size: 30px; font-weight: 600; line-height: 26px;">Cinimatography and Videography</span>
+                                <h2 style="   font-family: 'Bree Serif', serif; font-size: 20px;">Omars Mission</h2>
                                 <a href="{% url 'about' %}" class="primary-btn">See more about us</a>
                             </div>
                         </div>
@@ -408,14 +405,11 @@
                 </div>
             </div>
             <div class="work__item wide__item set-bg8">
-                    <style>
-            .set-bg8{
-                            background: url({% static 'img/work/work-7.jpg' %})
-                            
-
-                        }
-                    </style>
-                     {% comment %} data-setbg="img/work/work-7.jpg"> {% endcomment %}
+                <style>
+                    .set-bg8{
+                        background: url({% static 'img/work/work-7.jpg' %})
+                    }
+                </style>
                 <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i
                         class="fa fa-play"></i></a>
                 <div class="work__item__hover">
@@ -440,7 +434,7 @@
                             <div class="counter__item__text">
                                 <img src="{% static 'img/icons/ci-1.png' %}" alt="">
                                 <h2 class="counter_num">230</h2>
-                                <p>Compled Projects</p>
+                                <p>Completed Projects</p>
                             </div>
                         </div>
                     </div>
@@ -467,7 +461,7 @@
                             <div class="counter__item__text">
                                 <img src="{% static 'img/icons/ci-4.png' %}" alt="">
                                 <h2 class="counter_num">230</h2>
-                                <p>Compled Projects</p>
+                                <p>Completed Projects</p>
                             </div>
                         </div>
                     </div>
@@ -479,13 +473,11 @@
 
     <!-- Team Section Begin -->
     <section class="team spad set-bg100" >
-     <style>
-                        .set-bg100{
-                            background: url({% static 'img/team-bg.jpg' %})
-
-                        }
-                    </style> 
-    {% comment %} data-setbg="{% static 'img/team-bg.jpg' %}"> {% endcomment %}
+        <style>
+            .set-bg100{
+                background: url({% static 'img/team-bg.jpg' %})
+            }
+        </style> 
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -500,14 +492,13 @@
                     <div class="team__item set-bg14">
                     <style>
                         .set-bg14{
-                            background: url({% static 'img/team/gr3.png' %})
+                            background-image: url({% static 'img/team2/team1.jpg' %})
 
                         }
                     </style> 
-                        {% comment %} data-setbg="{% static 'img/team/team-1.jpg' %}"> {% endcomment %}
                         <div class="team__item__text">
-                            <h4>AMANDA STONE</h4>
-                            <p>Omars</p>
+                            <h4>Hambasan Gudisa</h4>
+                            <p>Omars Mission Digital School General Manager</p>
                             <div class="team__item__social">
                                 <a href="#"><i class="fa fa-facebook" _blank></i></a>
                                 <a href="#"><i class="fa fa-twitter"_blank></i></a>
@@ -520,14 +511,12 @@
                     <div class="team__item team__item--second set-bg15">
                         <style>
                         .set-bg15{
-                            background: url({% static 'img/team/group1.png' %})
-
+                            background-image: url({% static 'img/team2/team2.JPG' %})
                         }
                     </style> 
-                     {% comment %} data-setbg="{% static 'img/team/team-2.jpg' %}"> {% endcomment %}
                         <div class="team__item__text">
-                            <h4>AMANDA STONE</h4>
-                            <p>Omars</p>
+                            <h4>Lensa Abdisa</h4>
+                            <p>Omars Mission School Teacher</p>
                             <div class="team__item__social">
                                 <a href="#"><i class="fa fa-facebook"_blank></i></a>
                                 <a href="#"><i class="fa fa-twitter"_blank></i></a>
@@ -540,14 +529,13 @@
                     <div class="team__item team__item--third set-bg16">
                         <style>
                         .set-bg16{
-                            background: url({% static 'img/team/oneperson.png' %})
-
+                            background-image: url({% static 'img/team2/team3.JPG' %})
                         }
                     </style> 
                      {% comment %} data-setbg="{% static 'img/team/team-3.jpg' %}"> {% endcomment %}
                         <div class="team__item__text">
-                            <h4>AMANDA STONE</h4>
-                            <p>Omars</p>
+                            <h4>Guluma Buzuneh</h4>
+                            <p>Omars Mission School Teacher</p>
                             <div class="team__item__social">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
                                 <a href="#"><i class="fa fa-twitter"></i></a>
@@ -560,15 +548,14 @@
                     <div class="team__item team__item--four set-bg17">
                     <style>
                         .set-bg17{
-                            background: url({% static 'img/team/group1.png' %});
-                            repeat:no
-
+                            /* background-repeat: no-repeat; */
+                            background-image: url({% static 'img/team2/team4.JPG' %});
                         }
                     </style> 
                     {% comment %} data-setbg="{% static 'img/team/team-4.jpg' %}"> {% endcomment %}
                         <div class="team__item__text">
-                            <h4>AMANDA STONE</h4>
-                            <p>Omars</p>
+                            <h4>Abdifan Kasaye</h4>
+                            <p>Omars Mission School Teacher</p>
                             <div class="team__item__social">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
                                 <a href="#"><i class="fa fa-twitter"></i></a>
@@ -692,13 +679,11 @@
 
     <!-- Call To Action Section Begin -->
     <section class="callto spad set-bg20">
-         <style>
-                        .set-bg20{
-                            background: url({% static 'img/callto-bg.jpg' %})
-
-                        }
-                    </style>  
-    {% comment %} data-setbg="{% static 'img/callto-bg.jpg' %}"> {% endcomment %}
+        <style>
+            .set-bg20{
+                background: url({% static 'img/callto-bg.jpg' %})
+            }
+        </style>  
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
