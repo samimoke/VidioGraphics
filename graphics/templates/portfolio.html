@@ -422,8 +422,8 @@
             <div class="footer__top">
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
-                        <div class="footer__top__logo" style="background-color: #fff; padding: 10px; border-radius: 10px;">
-                            <a href="{% url 'home' %}"><img src="{% static 'img/logo/omarlogo.png' %}" alt="OMARS"></a>
+                        <div class="footer__top__logo" style="background-color: #fff; border-radius: 10px;">
+                            <a href="{% url 'home' %}"><img style="border-radius: 10px; border: 3px solid #f60;" src="{% static 'img/blog/blog-21.jpg' %}" alt="OMARS"></a>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
@@ -436,8 +436,8 @@
                         </div>
 
                         <div style="margin-top: 20px;" class="image-2024">
-                            <a href=""><img style="height: 270px; width: 270px;border-radius: 10px;" src="../static/img/blog/blog-13.jpg" alt=""></a>
-                            <a href=""><img style="height: 270px; width: 270px; margin-left: 10px; border-radius: 10px;" src="../static/img/blog/blog-12.jpg" alt=""></a>
+                            <a href=""><img style="height: 400px; width: 270px;border-radius: 10px;" src="../static/img/blog/blog-6.jpg" alt=""></a>
+                            <a href=""><img style="height: 400px; width: 270px; margin-left: 10px; border-radius: 10px;" src="../static/img/blog/blog-7.jpg" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -447,7 +447,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="footer__option__item">
                             <h5>About us</h5>
-                            <p>Formed in 2006 by Ambasan and His Friends, Omars is an award-winning, full-service
+                            <p>Founded in 2012 by Hambasan and His Friends, Omars is an award-winning, full-service
                                 production company specializing.</p>
                             <a href="{% url 'about' %}" class="read__more">Read more <span class="arrow_right"></span></a>
                         </div>
@@ -477,7 +477,7 @@
                     <div class="col-lg-4 col-md-12">
                         <div class="footer__option__item">
                             <h5>Newsletter</h5>
-                            <p>Videoprah is an award-winning, full-service production company specializing.</p>
+                            <p>Videography is an award-winning, full-service production company specializing.</p>
                             <form action="{% url 'subscribe' %}" method="POST">
                                 {% csrf_token %}
                                 <input type="email" name="email" placeholder="Email">
