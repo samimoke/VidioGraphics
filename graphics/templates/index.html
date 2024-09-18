@@ -87,7 +87,7 @@
             
             <div class="row">
                 <div class="col-lg-2">
-                    <div style="display: flex; justify-content: center; align-items: center; width: 80px; height: 80px;" class="header__logo">
+                    <div class="header__logo">
                         <a href="{% url 'home' %}"><img src="{% static 'img/icon/omars-lg.png' %}" alt="OMARS">
                         {% comment %} 
                         <a href="{% url 'home' %}"><img src="{% static 'img/icon/omars-lg.png' %}" alt="OMARS'"> {% endcomment %}
@@ -143,10 +143,10 @@
                                 font-weight: 700;
                                 font-style: normal; font-size: 20px; -->
                             </div>
-                            <a href="#"><i class="fa fa-facebook" target="_blank"></i></a>
-                            <a href="#"><i class="fa fa-twitter"target="_blank"></i></a>
-                            <a href="#"><i class="fa fa-instagram"target="_blank"></i></a>
-                            <a href="#"><i class="fa fa-youtube-play"target="_blank"></i></a>
+                            <a href="#"><i class="fa fa-facebook" _blank></i></a>
+                            <a href="#"><i class="fa fa-twitter"_blank></i></a>
+                            <a href="#"><i class="fa fa-instagram"_blank></i></a>
+                            <a href="#"><i class="fa fa-youtube-play"_blank></i></a>
                         </div>
                     </div>
                 </div>
@@ -473,7 +473,7 @@
     <!-- Counter Section End -->
 
     <!-- Team Section Begin -->
-    <section id= "team" class="team spad set-bg100" >
+    <section class="team spad set-bg100" >
         <style>
             .set-bg100{
                 background: url({% static 'img/team-bg.jpg' %})
@@ -589,17 +589,14 @@
                 <div class="latest__slider owl-carousel">
                     <div class="col-lg-4">
                         <div class="blog__item latest__item">
-                             {% for post in posts %}
-                        
-                       
-                           <h4> {{post.title}}</h4>
+                            <h4>What Makes Users Want to Share a Video on Social Media?</h4>
                             <ul>
-                                 <li>{{post.created_on}}</li>
-                               <li>{{post.comments.count}} Comment</li>
+                                <li>Jan 03, 2020</li>
+                                <li>05 Comment</li>
                             </ul>
                             <p>We recently launched a new website for a Vital client and wanted to share some of the
                                 cool features we were able...</p>
-                            <a href="#">Read more <span class="arrow_right"></span></a>
+                            <a class="link-hover" href="#">Read more <span class="arrow_right"></span></a>
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -714,8 +711,8 @@
             <div class="footer__top">
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
-                        <div class="footer__top__logo">
-                            <a href="#"><img src="{% static 'img/logos.png' %}" alt="OMARS"></a>
+                        <div class="footer__top__logo" style="background-color: #fff; border-radius: 10px;">
+                            <a href="{% url 'home' %}"><img style="border-radius: 10px; border: 3px solid #f60;" src="{% static 'img/blog/blog-4.jpg' %}" alt="OMARS"></a>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
@@ -739,7 +736,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="footer__option__item">
                             <h5>About us</h5>
-                            <p>Formed in 2006 by Ambasan and His Friends, Omars is an award-winning, full-service
+                            <p>Founded in 2012 by Hambasan and His Friends, Omars is an award-winning, full-service
                                 production company specializing.</p>
                             <a href="{% url 'about' %}" class="read__more">Read more <span class="arrow_right"></span></a>
                         </div>
@@ -748,9 +745,9 @@
                         <div class="footer__option__item">
                             <h5>Who we are</h5>
                             <ul>
-                                <li><a href="{% url 'home' %}#team">Team</a></li>
+                                <li><a href="#">Team</a></li>
                                 <li><a href="#">Carrers</a></li>
-                                <li><a href="#">Contact us</a></li>
+                                <li><a href="{% url 'contactus'%}">Contact us</a></li>
                                 <li><a href="#">Locations</a></li>
                             </ul>
                         </div>
