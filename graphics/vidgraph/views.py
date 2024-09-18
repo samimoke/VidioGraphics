@@ -129,7 +129,7 @@ def portfolio(request):
 #         return Blog.objects.all()
 class Blogs(ListView):
     model = Blog
-    template_name = 'blog.html'
+    template_name = 'index.html'
     context_object_name = 'posts'
     paginate_by = 3
 
@@ -146,7 +146,7 @@ class Blogs(ListView):
             posts = paginator.page(page)
         except PageNotAnInteger:
             # If page is not an integer, deliver first page.
-            posts = paginator.page(1)
+            posts = paginator.page(3)
         except EmptyPage:
             # If page is out of range (e.g. 9999), deliver last page of results.
             posts = paginator.page(paginator.num_pages)
