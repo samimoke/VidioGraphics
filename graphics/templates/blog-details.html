@@ -46,12 +46,12 @@
                             <ul>
                                 <li><a href="{% url 'home' %}">Home</a></li>
                                 <li><a href="{% url 'about' %}">About</a></li>
-                                <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
+                                <li><a href="{% url 'portfolio' %}">Our Works</a></li>
                                 <li class="active"><a href="{% url 'service' %}">Services</a></li>
                                 <li><a href="#">Pages</a>
                                     <ul class="dropdown">
                                         <li><a href="{% url 'about' %}">About</a></li>
-                                        <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
+                                        <li><a href="{% url 'portfolio' %}">Our Works</a></li>
                                         <li><a href="{% url 'blog' %}">Blog</a></li>
                                         {% for post in posts %}
                                         <li><a href="{% url 'blog-detail' post.id %}">Blog Details</a></li>
@@ -236,22 +236,28 @@
     </div>
     <!-- Blog Details Section End -->
 
-    <!-- Footer Section Begin -->
+<!-- Footer Section Begin -->
     <footer class="footer">
         <div class="container">
             <div class="footer__top">
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
-                        <div class="footer__top__logo">
-                            <a href="{% url 'home' %}"><img src="{% static 'img/icon/omars-lg.png' %}" alt="OMARS"></a>
+                        <div class="footer__top__logo" style="background-color: #fff; border-radius: 10px;">
+                            <a href="{% url 'home' %}"><img style="border-radius: 10px; border: 3px solid #f60;" src="{% static 'img/blog/blog-17.jpg' %}" alt="OMARS"></a>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
                         <div class="footer__top__social">
-                            <a href="#"><i class="fa fa-facebook"_blank></i></a>
-                            <a href="#"><i class="fa fa-twitter"_blank></i></a>
-                            <a href="#"><i class="fa fa-instagram"_blank></i></a>
-                            <a href="#"><i class="fa fa-youtube-play"_blank></i></a>
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-dribbble"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-youtube-play"></i></a>
+                        </div>
+
+                        <div style="margin-top: 20px;" class="image-2024">
+                            <a href=""><img style="height: 300px; width: 270px;border-radius: 10px;" src="../static/img/blog/blog-15.jpg" alt=""></a>
+                            <a href=""><img style="height: 300px; width: 270px; margin-left: 10px; border-radius: 10px;" src="../static/img/blog/blog-16.jpg" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -261,7 +267,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="footer__option__item">
                             <h5>About us</h5>
-                            <p>Formed in 2006 by Ambasan and His Friends, Omars is an award-winning, full-service
+                            <p>Founded in 2012 by Hambasan and His Friends, Omars is an award-winning, full-service
                                 production company specializing.</p>
                             <a href="{% url 'about' %}" class="read__more">Read more <span class="arrow_right"></span></a>
                         </div>
@@ -273,7 +279,7 @@
                                 <li><a href="{% url 'home' %}#team">Team</a></li>
                                 <li><a href="#">Carrers</a></li>
                                 <li><a href="{% url 'contactus' %}">Contact us</a></li>
-                                <li><a href="{% url 'contactus' %}#location">Locations</a></li>
+                                <li><a href="#">Locations</a></li>
                             </ul>
                         </div>
                     </div>
@@ -284,14 +290,14 @@
                                 <li><a href="#">Feature</a></li>
                                 <li><a href="#">Latest</a></li>
                                 <li><a href="#">Browse Archive</a></li>
-                                <li><a href="#">Video for web</a></li>
+                                <li><a href="#">Video for Photography</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-12">
                         <div class="footer__option__item">
                             <h5>Newsletter</h5>
-                            <p>Videoprah is an award-winning, full-service production company specializing.</p>
+                            <p>Videography is an award-winning, full-service production company specializing.</p>
                             <form action="{% url 'subscribe' %}" method="POST">
                                 {% csrf_token %}
                                 <input type="email" name="email" placeholder="Email">
@@ -310,7 +316,7 @@
                                 document.write(new Date().getFullYear());
                             </script>
                             All rights reserved | This website is made with <i class="fa fa-heart-o"
-                                aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Gezagn and Samuel</a>
+                                aria-hidden="true"></i> by <a href="https://colorlib.com" target="e_blank">Gezagn and Samuel</a>
                         </p>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </div>

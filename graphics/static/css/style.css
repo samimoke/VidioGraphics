@@ -369,12 +369,6 @@ ol {
   padding: 28px 0px;
 }
 
-/* .header__nav__option .header__nav__menu ul{
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
-  font-style: italic;
-} */
-
 .header__nav__menu {
   display: inline-block;
   margin-right: 30px;
@@ -407,7 +401,7 @@ ol {
   position: absolute;
   left: 0;
   top: 60px;
-  width: 140px;
+  width: 200px;
   background: #ffffff;
   text-align: left;
   padding: 2px 0;
@@ -431,8 +425,8 @@ ol {
 .header__nav__menu ul li .dropdown li a:hover {
   background-color: #F60;
   color: white;
-  font-weight: 500;
-  font-size: 24px;
+  font-weight: 300;
+  font-size: 13px;
   font-style: italic;
 }
 .header__nav__menu ul li .dropdown li a:after {
@@ -494,48 +488,9 @@ ol {
   display: none;
 }
 
-/* .nav_socials{
-  display: flex;
-  justify-content: space-between;
-  background-color: #264c98;
-  padding: 15px;
-  margin-top: 27px;
-  width: 100%;
-  border-radius: 10px;
-}
-.nav_socials email_socials{
-  flex: 1;
-  margin-right: 5px;
-}
-.email_socials i {
-  margin-right: 7px;
-  color: #f60;
-  font-size: 30px;
-}
-.email_socials a {
-  color: white;
-  font-size: 22px;
-}
-.email_socials a:hover {
-  color: #f60;
-  font-size: 22px;
-}
+/* 
 
-.phone_socials i{
-  margin-right: 7px;
-  color: #f60;
-  font-size: 30px;
-}
-.phone_socials a{
-  color: white;
-  font-size: 22px;
-  letter-spacing: 1px;
-  font-weight: 600;
-}
-.phone_socials a:hover {
-  color: #f60;
-  font-size: 22px;
-} */
+ */
 /*---------------------
   Hero
 -----------------------*/
@@ -543,9 +498,10 @@ ol {
   /* border: 3px solid blue; */
 }
 .set-bg110, .set-bg12, .set-bg9 {
+  background: url(../img/herobg/ombg.jpg);
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat; */
 }
 .hero__slider.owl-carousel .owl-item.active .hero__text span {
   top: 0;
@@ -934,8 +890,18 @@ Services End
 }
 .blog__item.latest__item:hover {
   border: 1px solid #222222 !important;
-  background: url(../img/blog/blog-1.jpg);
+  background: url(../img/blog/blog-3.jpg);
   background-size: cover;
+}
+.blog__item.latest__item:hover p{
+  color: #f60;
+}
+.blog__item.latest__item a:hover {
+  background-color: #f60;
+  padding: 10px;
+  border: 2px solid #00bfe7;
+  border-radius: 10px;
+  color: #000;
 }
 
 .latest__slider.owl-carousel .owl-item .col-lg-4 {
@@ -1033,6 +999,10 @@ Services End
 .footer__top__social a:last-child {
   margin-right: 0;
 }
+
+/* .image-2024{
+  margin-top: 20px;
+} */
 
 .footer__option {
   padding-bottom: 35px;

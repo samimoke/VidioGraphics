@@ -59,6 +59,12 @@
     <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'css/apply-btn.css' %}" type="text/css">
+
+    <!-- <style>
+        .latest__slider.latest__item a:hover{
+            background-color: #f60;
+    }
+    </style> -->
 </head>
 
 <body>
@@ -69,8 +75,8 @@
 
     <!-- Header Section Begin -->
     <header class="header">
-        <!-- <div class="container bgg">
-            <style>
+        <div class="container">
+            <!-- <style>
                 .bgg{
                     color: rgb(255, 102, 0);
                     background-color:rgb(31, 42, 112);
@@ -82,8 +88,9 @@
             <div class="row">
                 <div class="col-lg-2">
                     <div style="display: flex; justify-content: center; align-items: center; width: 80px; height: 80px;" class="header__logo">
-              <a href="{% url 'home' %}"><img src="{% static 'img/icon/omars-lg.png' %}" alt="OMARS">
-                        {% comment %} <a href="{% url 'home' %}"><img src="{% static 'img/icon/omars-lg.png' %}" alt="OMARS'"> {% endcomment %}
+                        <a href="{% url 'home' %}"><img src="{% static 'img/icon/omars-lg.png' %}" alt="OMARS">
+                        {% comment %} 
+                        <a href="{% url 'home' %}"><img src="{% static 'img/icon/omars-lg.png' %}" alt="OMARS'"> {% endcomment %}
                         </a>
                     </div>
                 </div>
@@ -98,7 +105,7 @@
                                 <li><a href="#" >Pages</a>
                                     <ul class="dropdown">
                                         <li><a href="{% url 'about' %}">About</a></li>
-                                        <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
+                                        <li><a href="{% url 'portfolio' %}">Our Works</a></li>
                                         <li><a href="{% url 'blog' %}">Blog</a></li>
                                         {% for post in posts %}
                                         <li><a href="{% url 'blog-detail' post.id %}">Blog Details</a></li>
@@ -115,11 +122,11 @@
 
                             <div class="nav_socials">
                                 <div class="email_socials">
-                                    <i class="fa fa-envelope"></i> <a href="mailto:greatbeki22@gmail.com">greatbeki22@gmail.com</a>
+                                    <i class="fa fa-envelope"></i> <a href="mailto:greatbeki22@gmail.com">hambaaseenaa@gmail.com</a>
                                 </div>
 
                                 <div class="phone_socials">
-                                    <i class="fa fa-phone"></i> <a href="tel:+251911000000">+251961305788</a>
+                                    <i class="fa fa-phone"></i> <a href="tel:+251 92 440 9289">(+251) 924 40 9289</a>
                                 </div>
                             </div>
                         </nav>
@@ -153,12 +160,12 @@
     <section class="hero">
         <div class="hero__slider owl-carousel">
             <div class="hero__item set-bg110" >
-             <style>
+             <!-- <style>
                 .set-bg110{
                     background-image: url({% static 'img/herobg/ombg.jpg' %});
                     /* background: url({% static 'img/herobg/hero.jpg' %}); */
                 }
-            </style>
+            </style> -->
        
                     {% comment %} data-setbg="{% static 'img/hero/hero-1.jpg' %}"> {% endcomment %}
                 <div class="container">
@@ -174,13 +181,13 @@
                 </div>
             </div>
             <div class="hero__item set-bg12" >
-                  <style>
+                  <!-- <style>
                     .set-bg12{
                         background-image: url({% static 'img/herobg/ombg.jpg' %});
                         /* background: url({% static 'img/herobg/hero.jpg' %}); 
                         */
                         }
-                    </style>
+                    </style> -->
                 {% comment %} data-setbg="{% static 'img/hero/hero-1.jpg' %}"> {% endcomment %}
                 <div class="container">
                     <div class="row">
@@ -195,12 +202,12 @@
                 </div>
             </div> 
         <div class="hero__item set-bg9" >
-              <style>
+              <!-- <style>
                 .set-bg9{
                     background-image: url({% static 'img/herobg/ombg.jpg' %});
                         /* background: url({% static 'img/herobg/ombg.jpg' %}) */
                     }
-                    </style>
+                    </style> -->
         {% comment %} data-setbg="{% static 'img/hero/hero-1.jpg' %}"> {% endcomment %}
                 <div class="container">
                     <div class="row">
@@ -288,8 +295,6 @@
                 <style> 
              .set-bg2{
                             background: url({% static 'img/work/work-1.jpg' %})
-                            
-
                         }
                     </style>
             {% comment %} data-setbg="{% static 'img/work/work-1.jpg' %}"> {% endcomment %}
@@ -301,8 +306,8 @@
                 <div class="work__item__hover">
                     <h4>{{videos.title}}</h4>
                     {% comment %} <ul>
-                        <li>eCommerce</li>
-                        <li>Magento</li>
+                        <li>Wedding Video</li>
+                        <li>Videography</li>
                     </ul> {% endcomment %}
                 </video>
                     {% endfor %}
@@ -314,7 +319,6 @@
             .set-bg3{
                             background: url({% static 'img/work/work-2.jpg' %})
                             
-
                         }
                     </style>
                      {% comment %} data-setbg="{% static 'img/work/work-2.jpg' %}"> {% endcomment %}
@@ -323,8 +327,8 @@
                         <div class="work__item__hover">
                     <h4>VIP Auto Tires & Service</h4>
                     <ul>
-                        <li>eCommerce</li>
-                        <li>Magento</li>
+                        <li>Wedding Video</li>
+                        <li>Videography</li>
                     </ul>
                 </div>
             </div>
@@ -333,7 +337,6 @@
             .set-bg4{
                             background: url({% static 'img/work/work-3.jpg' %})
                             
-
                         }
                     </style> 
                     {% comment %} data-setbg="{% static 'img/work/work-3.jpg' %}"> {% endcomment %}
@@ -342,8 +345,8 @@
                         <div class="work__item__hover">
                     <h4>VIP Auto Tires & Service</h4>
                     <ul>
-                        <li>eCommerce</li>
-                        <li>Magento</li>
+                        <li>Wedding Video</li>
+                        <li>Videography</li>
                     </ul>
                 </div>
             </div>
@@ -361,8 +364,8 @@
                 <div class="work__item__hover">
                     <h4>VIP Auto Tires & Service</h4>
                     <ul>
-                        <li>eCommerce</li>
-                        <li>Magento</li>
+                        <li>Wedding Video</li>
+                        <li>Videography</li>
                     </ul>
                 </div>
             </div>
@@ -371,7 +374,6 @@
             .set-bg6{
                             background: url({% static 'img/work/work-5.jpg' %})
                             
-
                         }
                     </style> 
                     {% comment %} data-setbg="img/work/work-5.jpg"> {% endcomment %}
@@ -380,8 +382,8 @@
                         <div class="work__item__hover">
                     <h4>VIP Auto Tires & Service</h4>
                     <ul>
-                        <li>eCommerce</li>
-                        <li>Magento</li>
+                        <li>Wedding Video</li>
+                        <li>Videography</li>
                     </ul>
                 </div>
             </div>
@@ -390,7 +392,6 @@
             .set-bg7{
                             background: url({% static 'img/work/work-6.jpg' %})
                             
-
                         }
                     </style>
                     {% comment %} data-setbg="{% static 'img/work/work-6.jpg' %}"> {% endcomment %}
@@ -399,8 +400,8 @@
                         <div class="work__item__hover">
                     <h4>VIP Auto Tires & Service</h4>
                     <ul>
-                        <li>eCommerce</li>
-                        <li>Magento</li>
+                        <li>Wedding Video</li>
+                        <li>Videography</li>
                     </ul>
                 </div>
             </div>
@@ -415,8 +416,8 @@
                 <div class="work__item__hover">
                     <h4>VIP Auto Tires & Service</h4>
                     <ul>
-                        <li>eCommerce</li>
-                        <li>Magento</li>
+                        <li>Wedding Video</li>
+                        <li>Videography</li>
                     </ul>
                 </div>
             </div>
@@ -491,14 +492,13 @@
                 <div class="col-lg-3 col-md-6 col-sm-6 p-0">
                     <div class="team__item set-bg14">
                     <style>
-                        .set-bg14{
-                            background-image: url({% static 'img/team2/team1.jpg' %})
-
+                .set-bg14{
+                    background-image: url({% static 'img/team2/team01.jpg' %})
                         }
                     </style> 
                         <div class="team__item__text">
-                            <h4>Hambasan Gudisa</h4>
-                            <p>Omars Mission Digital School General Manager</p>
+                            <h4>Hambasan Gudisa\</h4>
+                            <p>Omars Mission School General Manager</p>
                             <div class="team__item__social">
                                 <a href="#"><i class="fa fa-facebook" _blank></i></a>
                                 <a href="#"><i class="fa fa-twitter"_blank></i></a>
@@ -515,7 +515,7 @@
                         }
                     </style> 
                         <div class="team__item__text">
-                            <h4>Lensa Abdisa</h4>
+                            <h4>Hirko Chali</h4>
                             <p>Omars Mission School Teacher</p>
                             <div class="team__item__social">
                                 <a href="#"><i class="fa fa-facebook"_blank></i></a>
@@ -534,7 +534,7 @@
                     </style> 
                      {% comment %} data-setbg="{% static 'img/team/team-3.jpg' %}"> {% endcomment %}
                         <div class="team__item__text">
-                            <h4>Guluma Buzuneh</h4>
+                            <h4>Muse Tadesse</h4>
                             <p>Omars Mission School Teacher</p>
                             <div class="team__item__social">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
@@ -554,7 +554,7 @@
                     </style> 
                     {% comment %} data-setbg="{% static 'img/team/team-4.jpg' %}"> {% endcomment %}
                         <div class="team__item__text">
-                            <h4>Abdifan Kasaye</h4>
+                            <h4>Hana Bekele</h4>
                             <p>Omars Mission School Teacher</p>
                             <div class="team__item__social">
                                 <a href="#"><i class="fa fa-facebook"></i></a>
@@ -597,9 +597,9 @@
                                  <li>{{post.created_on}}</li>
                                <li>{{post.comments.count}} Comment</li>
                             </ul>
-                            <p>{{post.body|slice:100}}</p>
-                            <a href="{% url 'blog-detail' post.id %}">Read more <span class="arrow_right"></span></a>
-                            {% endfor %} 
+                            <p>We recently launched a new website for a Vital client and wanted to share some of the
+                                cool features we were able...</p>
+                            <a href="#">Read more <span class="arrow_right"></span></a>
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -700,21 +700,22 @@
         </div>
     </section>
     <!-- Call To Action Section End -->
-
-    <!-- Footer Section Begin -->
-    <footer class="footer">
-        <div class="container bgg">
-             <style>
+             <!-- <style>
           .bgg{
             background-color:rgb(31, 42, 112);
           }
           
-        </style>
+        </style> -->
+
+
+<!-- Footer Section Begin -->
+    <footer class="footer">
+        <div class="container">
             <div class="footer__top">
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
-                        <div style="display: flex; justify-content: center; align-items: center; width: 80px; height: 80px;"class="footer__top__logo">
-                            <a href="#"><img src="{% static 'img/icon/omars-lg.png' %}" alt="OMARS"></a>
+                        <div class="footer__top__logo">
+                            <a href="#"><img src="{% static 'img/logos.png' %}" alt="OMARS"></a>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6">
@@ -725,6 +726,11 @@
                             <a href="#"><i class="fa fa-instagram"></i></a>
                             <a href="#"><i class="fa fa-youtube-play"></i></a>
                         </div>
+
+                        <div style="margin-top: 20px;" class="image-2024">
+                            <a href=""><img style="height: 270px; width: 270px;border-radius: 10px;" src="../static/img/blog/blog-13.jpg" alt=""></a>
+                            <a href=""><img style="height: 270px; width: 270px; margin-left: 10px; border-radius: 10px;" src="../static/img/blog/blog-12.jpg" alt=""></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -733,7 +739,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="footer__option__item">
                             <h5>About us</h5>
-                            <p>Formed in 2018 by Hambasan, Omars is an award-winning, full-service
+                            <p>Formed in 2006 by Ambasan and His Friends, Omars is an award-winning, full-service
                                 production company specializing.</p>
                             <a href="{% url 'about' %}" class="read__more">Read more <span class="arrow_right"></span></a>
                         </div>
@@ -744,8 +750,8 @@
                             <ul>
                                 <li><a href="{% url 'home' %}#team">Team</a></li>
                                 <li><a href="#">Carrers</a></li>
-                                <li><a href="{% url 'contactus' %}">Contact us</a></li>
-                                <li><a href="{% url 'contactus' %}#location">Locations</a></li>
+                                <li><a href="#">Contact us</a></li>
+                                <li><a href="#">Locations</a></li>
                             </ul>
                         </div>
                     </div>
@@ -756,15 +762,15 @@
                                 <li><a href="#">Feature</a></li>
                                 <li><a href="#">Latest</a></li>
                                 <li><a href="#">Browse Archive</a></li>
-                                <li><a href="#">Video for photography</a></li>
+                                <li><a href="#">Video for Photography</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-12">
                         <div class="footer__option__item">
                             <h5>Newsletter</h5>
-                            <p>Omars is an award-winning, full-service production company specializing.</p>
-                              <form action="{% url 'subscribe' %}" method="POST">
+                            <p>Videography is an award-winning, full-service production company specializing.</p>
+                            <form action="{% url 'subscribe' %}" method="POST">
                                 {% csrf_token %}
                                 <input type="email" name="email" placeholder="Email">
                                 <button type="submit"><i class="fa fa-send"></i></button>
@@ -781,8 +787,8 @@
                             <script>
                                 document.write(new Date().getFullYear());
                             </script>
-                            All rights reserved | This is made with <i class="fa fa-heart-o"
-                                aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Samuel and Gezagn</a>
+                            All rights reserved | This website is made with <i class="fa fa-heart-o"
+                                aria-hidden="true"></i> by <a href="https://colorlib.com" target="e_blank">Gezagn and Samuel</a>
                         </p>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </div>

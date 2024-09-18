@@ -219,12 +219,13 @@ def register(request):
                 return redirect('home')
                 # return render(request,'message/index.html')
                 # return redirect(f"{reverse('index')}#pricing")
-        else:
+            else:
         
-          form = RegistrationForm()
+                form = RegistrationForm()
         # return render(request, 'message/Login_and_Register.html', {'form': form})
-          messages.error(request,'There is some errors')
-    return render(request,'Sign-in-siginup.html', {'form': form})
+                messages.error(request,'There is some errors')
+                return render(request,'Sign-in-siginup.html', {'form': form})
+        return render(request,'Sign-in-siginup.html')        
 @login_required
 def logout_request(request):
     logout(request)
