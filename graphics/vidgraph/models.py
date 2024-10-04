@@ -67,6 +67,8 @@ class Blog(models.Model):
     author=models.ForeignKey(User,on_delete=models.CASCADE)
     created_on=models.DateTimeField(auto_now_add=True)
     body=models.TextField()
+    def __str__(self):
+        return self.title
 class Subscription(models.Model):
     email = models.EmailField(unique=True)
     subscribed_at = models.DateTimeField(auto_now_add=True)
@@ -78,3 +80,6 @@ class Video(models.Model):
     title=models.CharField(max_length=300)
     created_on=models.DateTimeField(auto_now_add=True)
     Author=models.ForeignKey(User,on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.title

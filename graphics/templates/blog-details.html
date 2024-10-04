@@ -8,7 +8,7 @@
     <meta name="keywords" content="Videograph, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>School of Omars</title>
+    <title>Omars Mission</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
@@ -48,15 +48,15 @@
                                 <li><a href="{% url 'about' %}">About</a></li>
                                 <li><a href="{% url 'portfolio' %}">Our Works</a></li>
                                 <li class="active"><a href="{% url 'service' %}">Services</a></li>
-                                <li><a href="#">Pages</a>
-                                    <ul class="dropdown">
+                                <li><a href="{% url 'blog' %}">Blogs</a>
+                                    {% comment %} <ul class="dropdown">
                                         <li><a href="{% url 'about' %}">About</a></li>
                                         <li><a href="{% url 'portfolio' %}">Our Works</a></li>
                                         <li><a href="{% url 'blog' %}">Blog</a></li>
                                         {% for post in posts %}
                                         <li><a href="{% url 'blog-detail' post.id %}">Blog Details</a></li>
                                         {% endfor %}
-                                    </ul>
+                                    </ul> {% endcomment %}
                                 </li>
                                 <li><a href="{% url 'contactus' %}">Contact</a></li>
                                 {% if request.user.is_authenticated %}
@@ -133,101 +133,30 @@
                         <div class="blog__details__quotem">
                             <p>Comments </p>
                                {% for comment in post.comments.all %}
-                                {% comment %} {% if comment.is_parent %} {% endcomment %}
-                                    {% comment %} <strong> {% endcomment %}
-                                {% comment %} {{request.user.Profile.image}} {% endcomment %}
+                               
                                 <p>{{comment.first_name}}-{{comment.added_date|timesince}} ago </p>
-                            {% comment %} </strong> {% endcomment %}
-                                {% comment %} <br/></h5> {% endcomment %}
+                            
                                 <p> {{comment.body}}</p>
                              {% endfor %}
-                            {% comment %} <p>Create horizontal, square and vertical videos that are ready to be exported to your
-                                Instagram video stories and posts. Perfect for any social network!</p>
-                            <h6>Max Desmarais</h6>
-                            <i class="fa fa-quote-right"></i> {% endcomment %}
+                          
                         </div>
-                        {% comment %} <div class="blog__details__desc">
-                            <p>An average Internet user watches about 1.5 hours of online video every day. This means
-                                that video can be a powerful marketing tool for getting your message before the eyes of
-                                millions of people. However, not all videos are created equal.</p>
-                            <p>Some of them are inherently more shareable on social media than others. Here’s a quick
-                                look at how to make users want to share your videos on social media.</p>
-                        </div> {% endcomment %}
-                        <div class="blog__details__tags">
-                            <span><i class="fa fa-tag"></i> Tag:</span>
-                            <a href="#">Wedding</a>
-                            <a href="#">Event</a>
-                            <a href="#">Couple</a>
-                        </div>
-                        <div class="blog__details__option">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <a href="#" class="blog__details__option__item">
-                                        <h5><i class="fa fa-angle-left"></i> Previous posts</h5>
-                                        <div class="blog__details__option__item__img">
-                                            <img src="{% static 'img/blog/prev.jpg' %}" alt="">
-                                        </div>
-                                        <div class="blog__details__option__item__text">
-                                            <h6>Looking for Music & Sounds for my new Android...</h6>
-                                            <span>Nov 27, 2019</span>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6">
-                                    <a href="#" class="blog__details__option__item blog__details__option__item--right">
-                                        <h5>Previous posts <i class="fa fa-angle-right"></i></h5>
-                                        <div class="blog__details__option__item__img">
-                                            <img src="{% static 'img/blog/next.jpg' %}" alt="">
-                                        </div>
-                                        <div class="blog__details__option__item__text">
-                                            <h6>Looking for Music & Sounds for my new Android...</h6>
-                                            <span>Nov 27, 2019</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="blog__details__recent">
-                            <h4>Recent Posts</h4>
-                            <div class="row">
-                                <div class="col-lg-4 col-md-6 col-sm-6">
-                                    <div class="blog__details__recent__item">
-                                        <img src="{% static 'img/blog/ri-1.jpg' %}" alt="">
-                                        <h5>What are the steps of a body lift procedure?</h5>
-                                        <span>Dec 06, 2019</span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-sm-6">
-                                    <div class="blog__details__recent__item">
-                                        <img src="{% static 'img/blog/ri-2.jpg' %}" alt="">
-                                        <h5>What are the steps of a body lift procedure?</h5>
-                                        <span>Dec 06, 2019</span>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-6 col-sm-6">
-                                    <div class="blog__details__recent__item">
-                                        <img src="{% static 'img/blog/ri-3.jpg' %}" alt="">
-                                        <h5>How to shop for a cosm surgery procedure</h5>
-                                        <span>Dec 06, 2019</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
+                     
                         <div class="blog__details__comment">
                             <h4>Leave a comment</h4>
-                            {% for post in Posts %}
-                            <form action="{% url 'add_comment/' pk=post.pk %}" method="POST">
+                           
+                            <form action="{% url 'add_comment' pk=post.pk %}" method="POST">
                                 {% csrf_token %}
 
                                 <div class="input__list">
                                     <input type="text" name="first_name" value="{{request.user.first_name}}" placeholder="Name">
-                                    <input type="text" name="email" value="{{request.user.email}}"placeholder="Email">
-                                    {% comment %} <input type="text" placeholder="Website"> {% endcomment %}
+                                    <input type="text" name="email" value="{{request.user.email}}"placeholder="Email" required>
+                    
                                 </div>
-                                <textarea name="body" placeholder="Comment"></textarea>
+                                <textarea name="body" placeholder="Comment" required></textarea>
                                 <button type="submit" class="site-btn">Send Message</button>
                             </form>
-                            {% endfor %}
+                            {% comment %} {% endfor %} {% endcomment %}
                         </div>
                     </div>
                 </div>
@@ -267,7 +196,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="footer__option__item">
                             <h5>About us</h5>
-                            <p>Founded in 2012 by Hambasan and His Friends, Omars is an award-winning, full-service
+                            <p>Founded in 2012 by Hambasan, Omars Mission is an award-winning, full-service
                                 production company specializing.</p>
                             <a href="{% url 'about' %}" class="read__more">Read more <span class="arrow_right"></span></a>
                         </div>
@@ -277,7 +206,7 @@
                             <h5>Who we are</h5>
                              <ul>
                         <li><a href="{% url 'home' %}#team">Team</a></li>
-                        <li><a href="#">Carrers</a></li>
+                        
                         <li><a href="{% url 'contactus' %}">Contact us</a></li>
                         <li><a href="{% url 'contactus' %}#location">Locations</a></li>
                         </ul>
@@ -297,7 +226,7 @@
                     <div class="col-lg-4 col-md-12">
                         <div class="footer__option__item">
                             <h5>Newsletter</h5>
-                            <p>Videography is an award-winning, full-service production company specializing.</p>
+                            <p>Omars Mission is an award-winning, full-service production company specializing.</p>
                             <form action="{% url 'subscribe' %}" method="POST">
                                 {% csrf_token %}
                                 <input type="email" name="email" placeholder="Email">
@@ -316,7 +245,7 @@
                                 document.write(new Date().getFullYear());
                             </script>
                             All rights reserved | This website is made with <i class="fa fa-heart-o"
-                                aria-hidden="true"></i> by <a href="https://colorlib.com" target="e_blank">Gezagn and Samuel</a>
+                                aria-hidden="true"></i> by <a href="" target="e_blank">Gezagn and Samuel</a>
                         </p>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </div>

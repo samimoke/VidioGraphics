@@ -9,7 +9,7 @@ thank you
     <meta name="keywords" content="Videograph, unica, creative, html" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>School of Omars</title>
+    <title>Omars Mission</title>
 
     <!-- Google Font -->
     <link
@@ -83,14 +83,13 @@ thank you
                   <li><a href="{% url 'home' %}">Home</a></li>
                   <li><a href="{% url 'about' %}">About</a></li>
                   <li class="active">
-                    <a href="{% url 'portfolio' %}">Portfolio</a>
+                    <a href="{% url 'portfolio' %}">Our Works</a>
                   </li>
                   <li><a href="{% url 'service' %}">Services</a></li>
-                  <li>
-                    <a href="#">Pages</a>
-                    <ul class="dropdown">
+                  <li><a href="{% url 'blog' %}">Blogs</a>
+                    {% comment %} <ul class="dropdown">
                       <li><a href="{% url 'about' %}">About</a></li>
-                      <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
+                      <li><a href="{% url 'portfolio' %}">Our Works</a></li>
                       <li><a href="{% url 'blog' %}">Blog</a></li>
                       {% for post in posts %}
                       <li>
@@ -99,7 +98,7 @@ thank you
                         
                       </li>
                       {% endfor %}
-                    </ul>
+                    </ul> {% endcomment %}
                   </li>
                   <li><a href="{% url 'contactus' %}">Contact</a></li>
                 </ul>
@@ -175,7 +174,7 @@ thank you
               <div class="footer__option__item">
                 <h5>About us</h5>
                 <p>
-                  Formed in 2006 by Ambasan and His Friends, Omars is an
+                  Formed in 2012 by Hambasan, Omars Mission is an
                   award-winning, full-service production company specializing.
                 </p>
                 <a href="#" class="read__more"
@@ -188,7 +187,7 @@ thank you
                 <h5>Who we are</h5>
                  <ul>
                 <li><a href="{% url 'home' %}#team">Team</a></li>
-                <li><a href="#">Carrers</a></li>
+               
                 <li><a href="{% url 'contactus' %}">Contact us</a></li>
                 <li><a href="{% url 'contactus' %}#location">Locations</a></li>
             </ul>
@@ -209,7 +208,7 @@ thank you
               <div class="footer__option__item">
                 <h5>Newsletter</h5>
                 <p>
-                  Videoprah is an award-winning, full-service production company
+                  Omars Mission is an award-winning, full-service production company
                   specializing.
                 </p>
                 <form action="#">
@@ -231,11 +230,11 @@ thank you
                 </script>
                 All rights reserved | This Website is made with
                 <i class="fa fa-heart-o" aria-hidden="true"></i> by
-                <a href="https://colorlib.com" target="_blank"
+                <a href="" target="_blank"
                   >Gezagn and Samuel</a
                 >
               </p>
-              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              
             </div>
           </div>
         </div>

@@ -70,14 +70,13 @@ def logins(request):
 def SignupPage(request):
     form = UserCreationForm()
     context = {'form' : form}
-    return render(request, 'Sign-in-siginup.html')
+    return render(request, 'Sign-in-siginup.html',context)
 def home(request):
     video=Video.objects.all()
-    # context = {video:'video'}
     return render(request,'index.html',{'video':video})
 def about(request):
     return render(request,'about.html')
-    
+ 
 def contactus(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
@@ -85,7 +84,6 @@ def contactus(request):
             name = form.cleaned_data['name']
             email = form.cleaned_data['email']
             message = form.cleaned_data['message']
-
             # Save the form data to database (assuming contactform is a ModelForm)
             form.save()
 
@@ -99,7 +97,6 @@ def contactus(request):
                 [receiver_email],
                 fail_silently=False,
             )
-
             # Send a reply email to the sender
             sender_message = "Welcome to our page! We will contact you soon."
             send_mail(
@@ -109,7 +106,6 @@ def contactus(request):
                 [email],  # Sender's email
                 fail_silently=False,
             )
-
             return render(request, 'thanks.html', {'form': form})
     else:
         form = ContactForm()
@@ -118,18 +114,10 @@ def contactus(request):
     
 def portfolio(request):
     return render(request, 'portfolio.html')
-# class  Blogs(ListView):
-#     model=Blog
-#     template_name='blog.html'
-#     context_object_name = 'posts' 
-#     # p=Paginator(Blog.objects.all(),3)
-#     paginate_by = 1
-#     def get_queryset(self):
-#         # Your queryset logic goes here
-#         return Blog.objects.all()
+
 class Blogs(ListView):
     model = Blog
-    template_name = 'index.html'
+    template_name = 'blog.html'
     context_object_name = 'posts'
     paginate_by = 3
 
@@ -146,7 +134,7 @@ class Blogs(ListView):
             posts = paginator.page(page)
         except PageNotAnInteger:
             # If page is not an integer, deliver first page.
-            posts = paginator.page(3)
+            posts = paginator.page(1)
         except EmptyPage:
             # If page is out of range (e.g. 9999), deliver last page of results.
             posts = paginator.page(paginator.num_pages)
@@ -163,23 +151,12 @@ def paginate(request):
         posts = paginator.page(1)
     except EmptyPage:
         posts = paginator.page(paginator.num_pages)
-
     context = {'posts': posts}
     return JsonResponse({'html': render_to_string('blog.html', context)})
 class PostDetail(DetailView):
     model = Blog
-    # queryset= Blog.objects.all().order_by('-created_on')[:4]
     queryset = Blog.objects.order_by('-created_on')
-    
-    # paginator = Paginator(queryset, 3)
-    # page_number = request.GET.get('page')
     template_name = 'blog-details.html'
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     post = self.get_object()
-    #     comments = post.comments.all()  # Retrieve comments for the post
-    #     context['comments'] = comments
-    #     return context
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['post'] = self.object  # Add the 'post' object to the context
@@ -223,7 +200,7 @@ def register(request):
         
                 form = RegistrationForm()
         # return render(request, 'message/Login_and_Register.html', {'form': form})
-                messages.error(request,'There is some errors')
+                messages.error(request,'Check if you input unique email and other correct credientials')
                 return render(request,'Sign-in-siginup.html', {'form': form})
         return render(request,'Sign-in-siginup.html')        
 @login_required
@@ -255,9 +232,9 @@ def logins(request):
                 elif user.is_authenticated:
                     return redirect('home')
                 else:
-                    return redirect('home')
+                    return redirect('login')
             else:
-                messages.error(request, "Email or password incorrect")
+                messages.error(request, "Your password is incorrect")
                 return render(request, "Sign-in-siginup.html")
         else:
             f = UserLoginForm()

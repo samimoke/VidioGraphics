@@ -102,15 +102,15 @@
                                 <li><a href="{% url 'about' %}">About</a></li>
                                 <li><a href="{% url 'portfolio' %}">Our Works</a></li>
                                 <li><a href="{% url 'service' %}">Services</a></li>
-                                <li><a href="#" >Pages</a>
-                                    <ul class="dropdown">
+                               <li><a href="{% url 'blog' %}">Blogs</a>
+                                    {% comment %} <ul class="dropdown">
                                         <li><a href="{% url 'about' %}">About</a></li>
                                         <li><a href="{% url 'portfolio' %}">Our Works</a></li>
                                         <li><a href="{% url 'blog' %}">Blog</a></li>
                                         {% for post in posts %}
                                         <li><a href="{% url 'blog-detail' post.id %}">Blog Details</a></li>
                                         {% endfor %}
-                                    </ul>
+                                    </ul> {% endcomment %}
                                 </li>
                                <li><a href="{% url 'contactus' %}">Contact</a></li>
                                 {% if request.user.is_authenticated %}
@@ -297,32 +297,30 @@
                             background: url({% static 'img/work/work-1.jpg' %})
                         }
                     </style>
-            {% comment %} data-setbg="{% static 'img/work/work-1.jpg' %}"> {% endcomment %}
-            {% for videos in video.all %}
-          <video class="play-btn video-popup" control> 
-            <source src="{{ videos.video.url }}"  type="video/mp4" ><i class="fa fa-play"></i></video>
-                {% comment %} <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i {% endcomment %}
-                        {% comment %} class="fa fa-play"></i></a> {% endcomment %}
+                {% comment %} data-setbg="{% static 'img/work/work-1.jpg' %}"> {% endcomment %}
+                {% for videos in video.all %}
+                <video class="play-btn video-popup" controls> 
+                 <source src="{{ video.videos.url }}"  type="video/mp4" ></video>
+                
                 <div class="work__item__hover">
                     <h4>{{videos.title}}</h4>
-                    {% comment %} <ul>
-                        <li>Wedding Video</li>
-                        <li>Videography</li>
-                    </ul> {% endcomment %}
+                    
                 </video>
+               
                     {% endfor %}
                     
-                </div>
+                {% comment %} </div> {% endcomment %}
             </div>
-            <div class="work__item small__item set-bg3">
+            
+            {% comment %} <div class="work__item small__item set-bg3">
                 <style>
             .set-bg3{
                             background: url({% static 'img/work/work-2.jpg' %})
                             
                         }
-                    </style>
+                    </style> {% endcomment %}
                      {% comment %} data-setbg="{% static 'img/work/work-2.jpg' %}"> {% endcomment %}
-                <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i
+                {% comment %} <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i
                         class="fa fa-play"></i></a>
                         <div class="work__item__hover">
                     <h4>VIP Auto Tires & Service</h4>
@@ -340,7 +338,7 @@
                         }
                     </style> 
                     {% comment %} data-setbg="{% static 'img/work/work-3.jpg' %}"> {% endcomment %}
-                <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i
+                {% comment %} <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i
                         class="fa fa-play"></i></a>
                         <div class="work__item__hover">
                     <h4>VIP Auto Tires & Service</h4>
@@ -359,7 +357,7 @@
                         }
                     </style>
                      {% comment %} data-setbg="{% static 'img/work/work-4.jpg' %}"> {% endcomment %}
-                <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i
+                {% comment %} <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i
                         class="fa fa-play"></i></a>
                 <div class="work__item__hover">
                     <h4>VIP Auto Tires & Service</h4>
@@ -375,9 +373,9 @@
                             background: url({% static 'img/work/work-5.jpg' %})
                             
                         }
-                    </style> 
+                    </style>  {% endcomment %}
                     {% comment %} data-setbg="img/work/work-5.jpg"> {% endcomment %}
-                <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i
+                {% comment %} <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i
                         class="fa fa-play"></i></a>
                         <div class="work__item__hover">
                     <h4>VIP Auto Tires & Service</h4>
@@ -393,9 +391,9 @@
                             background: url({% static 'img/work/work-6.jpg' %})
                             
                         }
-                    </style>
+                    </style> {% endcomment %} 
                     {% comment %} data-setbg="{% static 'img/work/work-6.jpg' %}"> {% endcomment %}
-                <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i
+                {% comment %} <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="play-btn video-popup"><i
                         class="fa fa-play"></i></a>
                         <div class="work__item__hover">
                     <h4>VIP Auto Tires & Service</h4>
@@ -420,7 +418,7 @@
                         <li>Videography</li>
                     </ul>
                 </div>
-            </div>
+            </div>  {% endcomment %}
         </div>
     </section>
     <!-- Work Section End -->
@@ -572,113 +570,10 @@
             </div>
         </div>
     </section>
-    <!-- Team Section End -->
-
-    <!-- Latest Blog Section Begin -->
-    <section class="latest spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title center-title">
-                        <span>Our Blog</span>
-                        <h2>Blog Update</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="latest__slider owl-carousel">
-                    <div class="col-lg-4">
-                        <div class="blog__item latest__item">
-                            <h4>What Makes Users Want to Share a Video on Social Media?</h4>
-                            <ul>
-                                <li>Jan 03, 2020</li>
-                                <li>05 Comment</li>
-                            </ul>
-                            <p>We recently launched a new website for a Vital client and wanted to share some of the
-                                cool features we were able...</p>
-                            <a class="link-hover" href="#">Read more <span class="arrow_right"></span></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="blog__item latest__item">
-                            <h4>Bumper Ads: How to Tell a Story in 6 Seconds</h4>
-                            <ul>
-                                <li>Jan 03, 2020</li>
-                                <li>05 Comment</li>
-                            </ul>
-                            <p>We recently launched a new website for a Vital client and wanted to share some of the
-                                cool features we were able...</p>
-                            <a href="#">Read more <span class="arrow_right"></span></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="blog__item latest__item">
-                            <h4>What Makes Users Want to Share a Video on Social Media?</h4>
-                            <ul>
-                                <li>Jan 03, 2020</li>
-                                <li>05 Comment</li>
-                            </ul>
-                            <p>We recently launched a new website for a Vital client and wanted to share some of the
-                                cool features we were able...</p>
-                            <a href="#">Read more <span class="arrow_right"></span></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="blog__item latest__item">
-                            <h4>Bumper Ads: How to Tell a Story in 6 Seconds</h4>
-                            <ul>
-                                <li>Jan 03, 2020</li>
-                                <li>05 Comment</li>
-                            </ul>
-                            <p>We recently launched a new website for a Vital client and wanted to share some of the
-                                cool features we were able...</p>
-                            <a href="#">Read more <span class="arrow_right"></span></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="blog__item latest__item">
-                            <h4>What Makes Users Want to Share a Video on Social Media?</h4>
-                            <ul>
-                                <li>Jan 03, 2020</li>
-                                <li>05 Comment</li>
-                            </ul>
-                            <p>We recently launched a new website for a Vital client and wanted to share some of the
-                                cool features we were able...</p>
-                            <a href="#">Read more <span class="arrow_right"></span></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="blog__item latest__item">
-                            <h4>What Makes Users Want to Share a Video on Social Media?</h4>
-                            <ul>
-                                <li>Jan 03, 2020</li>
-                                <li>05 Comment</li>
-                            </ul>
-                            <p>We recently launched a new website for a Vital client and wanted to share some of the
-                                cool features we were able...</p>
-                            <a href="#">Read more <span class="arrow_right"></span></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="blog__item latest__item">
-                            <h4>What Makes Users Want to Share a Video on Social Media?</h4>
-                            <ul>
-                                <li>Jan 03, 2020</li>
-                                <li>05 Comment</li>
-                            </ul>
-                            <p>We recently launched a new website for a Vital client and wanted to share some of the
-                                cool features we were able...</p>
-                            <a href="#">Read more <span class="arrow_right"></span></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Latest Blog Section End -->
+    
 
     <!-- Call To Action Section Begin -->
-    <section class="callto spad set-bg20">
+    {% comment %} <section class="callto spad set-bg20">
         <style>
             .set-bg20{
                 background: url({% static 'img/callto-bg.jpg' %})
@@ -689,13 +584,13 @@
                 <div class="col-lg-8">
                     <div class="callto__text">
                         <h2>Fresh Ideas, Fresh Moments Giving Wings to your Stories.</h2>
-                        <p>INC5000, Best places to work 2019</p>
+                        <p>EBIRR 5000, Best places to work 2019</p>
                         <a href="#">Start your stories</a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </section> {% endcomment %}
     <!-- Call To Action Section End -->
              <!-- <style>
           .bgg{
@@ -712,17 +607,10 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <div class="footer__top__logo" style="background-color: #fff; border-radius: 10px;">
-                            <a href="{% url 'home' %}"><img style="border-radius: 10px; border: 3px solid #f60;" src="{% static 'img/blog/blog-4.jpg' %}" alt="OMARS"></a>
+                            <a href="{% url 'home' %}"><img style="height: 270px; width: 540px;border-radius: 10px; " src="{% static 'img/blog/blog-4.jpg' %}" alt="OMARS"></a>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="footer__top__social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-dribbble"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-youtube-play"></i></a>
-                        </div>
+                  
 
                         <div style="margin-top: 20px;" class="image-2024">
                             <a href=""><img style="height: 270px; width: 270px;border-radius: 10px;" src="../static/img/blog/blog-13.jpg" alt=""></a>
@@ -730,13 +618,14 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            {% comment %} </div> {% endcomment %}
+        
             <div class="footer__option">
                 <div class="row">
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="footer__option__item">
                             <h5>About us</h5>
-                            <p>Founded in 2012 by Hambasan and His Friends, Omars is an award-winning, full-service
+                            <p>Founded in 2012 by Hambasan, Omars Mission is an award-winning, full-service
                                 production company specializing.</p>
                             <a href="{% url 'about' %}" class="read__more">Read more <span class="arrow_right"></span></a>
                         </div>
@@ -746,7 +635,7 @@
                             <h5>Who we are</h5>
                     <ul>
                         <li><a href="{% url 'home' %}#team">Team</a></li>
-                        <li><a href="#">Carrers</a></li>
+                       
                         <li><a href="{% url 'contactus' %}">Contact us</a></li>
                         <li><a href="{% url 'contactus' %}#location">Locations</a></li>
                     </ul>
@@ -766,7 +655,7 @@
                     <div class="col-lg-4 col-md-12">
                         <div class="footer__option__item">
                             <h5>Newsletter</h5>
-                            <p>Videography is an award-winning, full-service production company specializing.</p>
+                            <p>Omars Mission is an award-winning, full-service production company specializing.</p>
                             <form action="{% url 'subscribe' %}" method="POST">
                                 {% csrf_token %}
                                 <input type="email" name="email" placeholder="Email">
@@ -785,7 +674,7 @@
                                 document.write(new Date().getFullYear());
                             </script>
                             All rights reserved | This website is made with <i class="fa fa-heart-o"
-                                aria-hidden="true"></i> by <a href="https://colorlib.com" target="e_blank">Gezagn and Samuel</a>
+                                aria-hidden="true"></i> by <a href="" target="e_blank">Gezagn and Samuel</a>
                         </p>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </div>
