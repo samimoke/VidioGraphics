@@ -64,7 +64,12 @@
     </div>
 
     <!-- Header Section Begin -->
-    <header class="header">
+    <header class="header bgj">
+      <style>
+            .bgj{
+                background-color:#92360B;
+            }
+        </style>
       <div class="container">
         <div class="row">
           <div class="col-lg-2">
@@ -123,7 +128,9 @@
       class="breadcrumb-option spad set-bg41">
       <style>
         .set-bg41{
-        background:url({% static  'img/breadcrumb-bg.jpg' %})
+          background-color:#E46904;
+          
+        {% comment %} background:url({% static  'img/breadcrumb-bg.jpg' %}) {% endcomment %}
         }
       </style>
       {% comment %} data-setbg="{% static  'img/breadcrumb-bg.jpg' %}"> {% endcomment %}
@@ -161,7 +168,13 @@
     <!-- Breadcrumb End -->
 
     <!-- Services Section Begin -->
-    <section class="services-page spad">
+    <section class="services-page spad bgh">
+      <style>
+            .bgh{
+                background-color:#fd7e14;
+                text-color:#FCFBF8;
+            }
+        </style>
       <div class="container">
         <div class="row">
           <div class="col-lg-4 col-md-6 col-sm-6">
@@ -394,7 +407,7 @@
                             <a href="{% url 'about' %}" class="read__more">Read more <span class="arrow_right"></span></a>
                         </div>
                     </div>
-                    <div class="col-lg-2 col-md-3 col-sm-3">
+                    <div class="col-lg-4 col-md-6 col-sm-6 text-center">
                         <div class="footer__option__item">
                             <h5>Who we are</h5>
                             <ul>
@@ -405,7 +418,7 @@
                 </ul>
                         </div>
                     </div>
-                    <div class="col-lg-2 col-md-3 col-sm-3">
+                    {% comment %} <div class="col-lg-2 col-md-3 col-sm-3">
                         <div class="footer__option__item">
                             <h5>Our work</h5>
                             <ul>
@@ -415,8 +428,8 @@
                                 <li><a href="#">Video for Photography</a></li>
                             </ul>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-12">
+                    </div> {% endcomment %}
+                    <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="footer__option__item">
                             <h5>Newsletter</h5>
                             <p>Omars Mission is an award-winning, full-service production company specializing.</p>

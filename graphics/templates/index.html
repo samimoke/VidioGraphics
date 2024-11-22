@@ -226,12 +226,24 @@
     <!-- Hero Section End -->
 
     <!-- Services Section Begin -->
-    <section class="services spad">
-        <div class="container">
+    <section class="services spad bgg0">
+        <style>
+            .bgg0{
+                background-color:#E24902;
+                text-color:#ffffff;
+            }
+        </style>
+        <div class="container mytext">
+            <style>
+            .mytext{
+                color:#ffffff;
+            }
+        </style>
             <div class="row">
                 <div class="col-lg-4">
                     <div class="services__title">
-                        <div class="section-title">
+                        <div class="section-title ">
+              
                             <span>Our services</span>
                             <h2>What We Do?</h2>
                         </div>
@@ -288,29 +300,30 @@
     <!-- Services Section End -->
 
     <!-- Work Section Begin -->
-    <section class="work">
-        <div class="work__gallery">
-            <div class="grid-sizer"></div>
+    {% comment %} <section class="work">
+        <div class="work__gallery"> {% endcomment %}
+            {% comment %} <div class="grid-sizer"></div>
             <div class="work__item wide__item set-bg2">
                 <style> 
              .set-bg2{
                             background: url({% static 'img/work/work-1.jpg' %})
                         }
-                    </style>
+                    </style> {% endcomment %}
                 {% comment %} data-setbg="{% static 'img/work/work-1.jpg' %}"> {% endcomment %}
-                {% for videos in video.all %}
+                {% comment %} {% for video in videos %}
                 <video class="play-btn video-popup" controls> 
-                 <source src="{{ video.videos.url }}"  type="video/mp4" ></video>
+                 <source src="{{ video.myvideo.url }}"  type="video/mp4" ></video>
                 
                 <div class="work__item__hover">
-                    <h4>{{videos.title}}</h4>
+                    <h4>{{video.title}}</h4>
+                </div> {% endcomment %}
                     
-                </video>
+                {% comment %} </video>
                
-                    {% endfor %}
+                    {% endfor %} {% endcomment %}
                     
                 {% comment %} </div> {% endcomment %}
-            </div>
+            {% comment %} </div> {% endcomment %}
             
             {% comment %} <div class="work__item small__item set-bg3">
                 <style>
@@ -419,12 +432,18 @@
                     </ul>
                 </div>
             </div>  {% endcomment %}
-        </div>
-    </section>
+        {% comment %} </div>
+    </section> {% endcomment %}
     <!-- Work Section End -->
 
     <!-- Counter Section Begin -->
-    <section class="counter">
+    <section class="counter bgg">
+        <style>
+            .bgg{
+                background-color:#DF7031;
+            }
+        </style>
+
         <div class="container">
             <div class="counter__content">
                 <div class="row">
@@ -630,7 +649,7 @@
                             <a href="{% url 'about' %}" class="read__more">Read more <span class="arrow_right"></span></a>
                         </div>
                     </div>
-                    <div class="col-lg-2 col-md-3 col-sm-3">
+                    <div class="col-lg-4 col-md-6 col-sm-6 text-center">
                         <div class="footer__option__item">
                             <h5>Who we are</h5>
                     <ul>
@@ -641,7 +660,7 @@
                     </ul>
                         </div>
                     </div>
-                    <div class="col-lg-2 col-md-3 col-sm-3">
+                    {% comment %} <div class="col-lg-2 col-md-3 col-sm-3">
                         <div class="footer__option__item">
                             <h5>Our work</h5>
                             <ul>
@@ -651,7 +670,7 @@
                                 <li><a href="#">Video for Photography</a></li>
                             </ul>
                         </div>
-                    </div>
+                    </div> {% endcomment %}
                     <div class="col-lg-4 col-md-12">
                         <div class="footer__option__item">
                             <h5>Newsletter</h5>

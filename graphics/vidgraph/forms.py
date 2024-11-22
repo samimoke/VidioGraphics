@@ -2,6 +2,7 @@ from django import forms
 from django.core.validators import validate_email
 from .models import Contactus, Comment, Subscription
 from django.contrib.auth.forms import AuthenticationForm,UserCreationForm
+from django.contrib.auth.forms import PasswordResetForm, SetPasswordForm
 from .models import User
 class ContactForm(forms.ModelForm):
     class Meta:
@@ -43,3 +44,18 @@ class SubscriptionForm(forms.ModelForm):
     class Meta:
         model = Subscription
         fields = ['email']
+
+class CustomPasswordResetForm(PasswordResetForm):
+    email = forms.EmailField(
+        max_length=254,
+        widget=forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'Enter your email'})
+    )
+class CustomSetPasswordForm(SetPasswordForm):
+    new_password1 = forms.CharField(
+        label="New Password",
+        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Enter new password'}),
+    )
+    new_password2 = forms.CharField(
+        label="Confirm New Password",
+        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Confirm new password'}),
+    )

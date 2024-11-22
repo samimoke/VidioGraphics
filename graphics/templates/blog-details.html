@@ -47,8 +47,8 @@
                                 <li><a href="{% url 'home' %}">Home</a></li>
                                 <li><a href="{% url 'about' %}">About</a></li>
                                 <li><a href="{% url 'portfolio' %}">Our Works</a></li>
-                                <li class="active"><a href="{% url 'service' %}">Services</a></li>
-                                <li><a href="{% url 'blog' %}">Blogs</a>
+                                <li><a href="{% url 'service' %}">Services</a></li>
+                                <li  class="active"><a href="{% url 'blog' %}">Blogs</a>
                                     {% comment %} <ul class="dropdown">
                                         <li><a href="{% url 'about' %}">About</a></li>
                                         <li><a href="{% url 'portfolio' %}">Our Works</a></li>
@@ -150,7 +150,7 @@
 
                                 <div class="input__list">
                                     <input type="text" name="first_name" value="{{request.user.first_name}}" placeholder="Name">
-                                    <input type="text" name="email" value="{{request.user.email}}"placeholder="Email" required>
+                                    <input type="email" name="email" value="{{request.user.email}}"placeholder="Email" required>
                     
                                 </div>
                                 <textarea name="body" placeholder="Comment" required></textarea>
@@ -201,7 +201,7 @@
                             <a href="{% url 'about' %}" class="read__more">Read more <span class="arrow_right"></span></a>
                         </div>
                     </div>
-                    <div class="col-lg-2 col-md-3 col-sm-3">
+                    <div class="col-lg-4 col-md-6 col-sm-6 text-center">
                         <div class="footer__option__item">
                             <h5>Who we are</h5>
                              <ul>
@@ -212,7 +212,7 @@
                         </ul>
                         </div>
                     </div>
-                    <div class="col-lg-2 col-md-3 col-sm-3">
+                    {% comment %} <div class="col-lg-2 col-md-3 col-sm-3">
                         <div class="footer__option__item">
                             <h5>Our work</h5>
                             <ul>
@@ -222,7 +222,7 @@
                                 <li><a href="#">Video for Photography</a></li>
                             </ul>
                         </div>
-                    </div>
+                    </div> {% endcomment %}
                     <div class="col-lg-4 col-md-12">
                         <div class="footer__option__item">
                             <h5>Newsletter</h5>

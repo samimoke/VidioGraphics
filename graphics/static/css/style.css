@@ -78,7 +78,7 @@ p {
   font-size: 16px;
   font-family: "Bree Serif", serif;
   /* font-family: "Josefin Sans", sans-serif; */
-  color: #adadad;
+  color: #fff;
   font-weight: 400;
   line-height: 26px;
   margin: 0 0 15px 0;
@@ -168,6 +168,7 @@ ol {
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
+  
   /* font-size: 21px; */
 }
 

@@ -15,6 +15,9 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.template.loader import render_to_string
+from django.contrib.auth.views import PasswordResetView, PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
+from django.urls import reverse_lazy
+from .forms import CustomPasswordResetForm, CustomSetPasswordForm
 
 
 # Create your views here.
@@ -73,7 +76,7 @@ def SignupPage(request):
     return render(request, 'Sign-in-siginup.html',context)
 def home(request):
     video=Video.objects.all()
-    return render(request,'index.html',{'video':video})
+    return render(request,'index.html',{'videos':video})
 def about(request):
     return render(request,'about.html')
  
@@ -274,4 +277,21 @@ def subscribe(request):
         else:
            form = SubscriptionForm()
            return render(request, 'blog-details.html', {'form': form})
+
+class CustomPasswordResetView(PasswordResetView):
+    template_name = 'password_reset.html'
+    form_class = CustomPasswordResetForm
+    success_url = reverse_lazy('password_reset_done')
+
+class CustomPasswordResetDoneView(PasswordResetDoneView):
+    template_name = 'password_reset_done.html'
+
+class CustomPasswordResetConfirmView(PasswordResetConfirmView):
+    template_name = 'password_reset_confirm.html'
+    form_class = CustomSetPasswordForm
+    success_url = reverse_lazy('password_reset_complete')
+
+class CustomPasswordResetCompleteView(PasswordResetCompleteView):
+    template_name = 'password_reset_complete.html'
+
        
