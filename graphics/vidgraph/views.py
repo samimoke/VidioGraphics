@@ -280,15 +280,42 @@ def subscribe(request):
 
 class CustomPasswordResetView(PasswordResetView):
     template_name = 'password_reset.html'
-    form_class = CustomPasswordResetForm
+    form = CustomPasswordResetForm
     success_url = reverse_lazy('password_reset_done')
+    email_template_name = 'emails/password_reset_email.txt'  # Custom plain text template
+    html_email_template_name = 'emails/password_reset_email.html'  # Custom HTML template
+
+
+    def send_mail(self, subject_template_name, email_template_name, context, from_email, to_email, html_email_template_name=None):
+        subject_template_name = 'emails/password_reset_subject.txt'
+        # Render the subject
+        subject = render_to_string(subject_template_name, context).strip()
+
+        # Render the plain text message
+        body = render_to_string(email_template_name, context)
+        from_email = EMAIL_HOST_USER
+
+        # Get to_email from context
+        to_email = [context.get('email')]
+
+        # Render the HTML message (if provided)
+        html_message = render_to_string(html_email_template_name, context) if html_email_template_name else None
+
+        # Send the email
+        send_mail(
+            subject,
+            body,
+            from_email,
+            to_email,
+            html_message=html_message,
+        )
 
 class CustomPasswordResetDoneView(PasswordResetDoneView):
     template_name = 'password_reset_done.html'
 
 class CustomPasswordResetConfirmView(PasswordResetConfirmView):
     template_name = 'password_reset_confirm.html'
-    form_class = CustomSetPasswordForm
+    form = CustomSetPasswordForm
     success_url = reverse_lazy('password_reset_complete')
 
 class CustomPasswordResetCompleteView(PasswordResetCompleteView):
